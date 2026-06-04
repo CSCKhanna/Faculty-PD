@@ -40,7 +40,7 @@ jobs:
           echo "run_update=$run_update" >> "$GITHUB_OUTPUT"
           echo "Eastern offset: $offset"
 
-      - name: Bootstrap static site files if needed
+      - name: Bootstrap updater files if needed
         if: steps.schedule.outputs.run_update == 'true'
         shell: bash
         run: |
@@ -48,8 +48,7 @@ jobs:
           base="https://mghp.osn.xsede.org/emri/faculty-training-webpage"
           mkdir -p data assets
 
-          if [ ! -f app.js ] || [ ! -f update-feeds.mjs ] || [ ! -f data/sources.json ] || grep -q "mghp.osn.xsede.org" index.html; then
-            curl -fsS "$base/index.html" -o index.html
+          if [ ! -f app.js ] || [ ! -f update-feeds.mjs ] || [ ! -f data/sources.json ]; then
             curl -fsS "$base/styles.css" -o styles.css
             curl -fsS "$base/app.js" -o app.js
             curl -fsS "$base/update-feeds.mjs" -o update-feeds.mjs
@@ -60,26 +59,30 @@ jobs:
 
           [ -f .nojekyll ] || printf 'Static GitHub Pages site; do not process with Jekyll.\n' > .nojekyll
 
-      - name: Remove manual updater UI
+      - name: Remove manual updater UI from self-hosted app files
         if: steps.schedule.outputs.run_update == 'true'
         shell: bash
         run: |
           node <<'NODE'
           const fs = require("fs");
 
-          let index = fs.readFileSync("index.html", "utf8");
-          index = index.replace(/\s*<button id="refreshButton"[\s\S]*?Update now\s*<\/button>\s*/m, "\n");
-          index = index.replace(/<span id="serverStatus">[\s\S]*?<\/span>/, '<span id="serverStatus">Updates run automatically daily at 11:59 p.m. Eastern.</span>');
-          fs.writeFileSync("index.html", index);
+          if (fs.existsSync("index.html")) {
+            let index = fs.readFileSync("index.html", "utf8");
+            index = index.replace(/\s*<button id="refreshButton"[\s\S]*?Update now\s*<\/button>\s*/m, "\n");
+            index = index.replace(/<span id="serverStatus">[\s\S]*?<\/span>/, '<span id="serverStatus">Updates run automatically daily at 11:59 p.m. Eastern.</span>');
+            fs.writeFileSync("index.html", index);
+          }
 
-          let app = fs.readFileSync("app.js", "utf8");
-          app = app.replace(/\n  refreshButton: document\.querySelector\("#refreshButton"\),/, "");
-          app = app.replace(/,\n  serverEnabled: false/, "");
-          app = app.replace(/\n  await detectServer\(\);/, "");
-          app = app.replace(/\n  els\.refreshButton\.addEventListener\("click", updateNow\);/, "");
-          app = app.replace(/(\n    renderAccessNotes\(\);\n    render\(\);)(?!\n    els\.serverStatus\.textContent)/, '$1\n    els.serverStatus.textContent = "Updates run automatically daily at 11:59 p.m. Eastern.";');
-          app = app.replace(/\nasync function detectServer\(\) \{[\s\S]*?\n\}\n\nasync function updateNow\(\) \{[\s\S]*?\n\}\n(?=function buildFilterControls\(\) \{)/, "\n");
-          fs.writeFileSync("app.js", app);
+          if (fs.existsSync("app.js")) {
+            let app = fs.readFileSync("app.js", "utf8");
+            app = app.replace(/\n  refreshButton: document\.querySelector\("#refreshButton"\),/, "");
+            app = app.replace(/,\n  serverEnabled: false/, "");
+            app = app.replace(/\n  await detectServer\(\);/, "");
+            app = app.replace(/\n  els\.refreshButton\.addEventListener\("click", updateNow\);/, "");
+            app = app.replace(/(\n    renderAccessNotes\(\);\n    render\(\);)(?!\n    els\.serverStatus\.textContent)/, '$1\n    els.serverStatus.textContent = "Updates run automatically daily at 11:59 p.m. Eastern.";');
+            app = app.replace(/\nasync function detectServer\(\) \{[\s\S]*?\n\}\n\nasync function updateNow\(\) \{[\s\S]*?\n\}\n(?=function buildFilterControls\(\) \{)/, "\n");
+            fs.writeFileSync("app.js", app);
+          }
           NODE
 
       - name: Validate scripts
