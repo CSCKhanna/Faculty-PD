@@ -40,7 +40,7 @@ jobs:
           echo "run_update=$run_update" >> "$GITHUB_OUTPUT"
           echo "Eastern offset: $offset"
 
-      - name: Bootstrap updater files if needed
+      - name: Bootstrap static site files if needed
         if: steps.schedule.outputs.run_update == 'true'
         shell: bash
         run: |
@@ -48,7 +48,8 @@ jobs:
           base="https://mghp.osn.xsede.org/emri/faculty-training-webpage"
           mkdir -p data assets
 
-          if [ ! -f app.js ] || [ ! -f update-feeds.mjs ] || [ ! -f data/sources.json ]; then
+          if [ ! -f app.js ] || [ ! -f update-feeds.mjs ] || [ ! -f data/sources.json ] || grep -q "mghp.osn.xsede.org" index.html; then
+            curl -fsS "$base/index.html" -o index.html
             curl -fsS "$base/styles.css" -o styles.css
             curl -fsS "$base/app.js" -o app.js
             curl -fsS "$base/update-feeds.mjs" -o update-feeds.mjs
@@ -59,7 +60,7 @@ jobs:
 
           [ -f .nojekyll ] || printf 'Static GitHub Pages site; do not process with Jekyll.\n' > .nojekyll
 
-      - name: Remove manual updater UI from self-hosted app files
+      - name: Remove manual updater UI
         if: steps.schedule.outputs.run_update == 'true'
         shell: bash
         run: |
