@@ -1,0 +1,108 @@
+name: Update training data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "59 3 * * *"
+    - cron: "59 4 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    name: Refresh provider sources
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check Eastern-time schedule
+        id: schedule
+        shell: bash
+        run: |
+          offset="$(TZ=America/New_York date +%z)"
+          run_update="false"
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            run_update="true"
+          elif [ "${{ github.event.schedule }}" = "59 3 * * *" ] && [ "$offset" = "-0400" ]; then
+            run_update="true"
+          elif [ "${{ github.event.schedule }}" = "59 4 * * *" ] && [ "$offset" = "-0500" ]; then
+            run_update="true"
+          fi
+
+          echo "run_update=$run_update" >> "$GITHUB_OUTPUT"
+          echo "Eastern offset: $offset"
+
+      - name: Bootstrap static site files if needed
+        if: steps.schedule.outputs.run_update == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://mghp.osn.xsede.org/emri/faculty-training-webpage"
+          mkdir -p data assets
+
+          if [ ! -f app.js ] || [ ! -f update-feeds.mjs ] || [ ! -f data/sources.json ] || grep -q "mghp.osn.xsede.org" index.html; then
+            curl -fsS "$base/index.html" -o index.html
+            curl -fsS "$base/styles.css" -o styles.css
+            curl -fsS "$base/app.js" -o app.js
+            curl -fsS "$base/update-feeds.mjs" -o update-feeds.mjs
+            curl -fsS "$base/data/sources.json" -o data/sources.json
+            curl -fsS "$base/data/trainings.json" -o data/trainings.json
+            curl -fsS "$base/assets/uri-seal.png" -o assets/uri-seal.png
+          fi
+
+          [ -f .nojekyll ] || printf 'Static GitHub Pages site; do not process with Jekyll.\n' > .nojekyll
+
+      - name: Remove manual updater UI
+        if: steps.schedule.outputs.run_update == 'true'
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require("fs");
+
+          let index = fs.readFileSync("index.html", "utf8");
+          index = index.replace(/\s*<button id="refreshButton"[\s\S]*?Update now\s*<\/button>\s*/m, "\n");
+          index = index.replace(/<span id="serverStatus">[\s\S]*?<\/span>/, '<span id="serverStatus">Updates run automatically daily at 11:59 p.m. Eastern.</span>');
+          fs.writeFileSync("index.html", index);
+
+          let app = fs.readFileSync("app.js", "utf8");
+          app = app.replace(/\n  refreshButton: document\.querySelector\("#refreshButton"\),/, "");
+          app = app.replace(/,\n  serverEnabled: false/, "");
+          app = app.replace(/\n  await detectServer\(\);/, "");
+          app = app.replace(/\n  els\.refreshButton\.addEventListener\("click", updateNow\);/, "");
+          app = app.replace(/(\n    renderAccessNotes\(\);\n    render\(\);)(?!\n    els\.serverStatus\.textContent)/, '$1\n    els.serverStatus.textContent = "Updates run automatically daily at 11:59 p.m. Eastern.";');
+          app = app.replace(/\nasync function detectServer\(\) \{[\s\S]*?\n\}\n\nasync function updateNow\(\) \{[\s\S]*?\n\}\n(?=function buildFilterControls\(\) \{)/, "\n");
+          fs.writeFileSync("app.js", app);
+          NODE
+
+      - name: Validate scripts
+        if: steps.schedule.outputs.run_update == 'true'
+        run: |
+          node --check app.js
+          node --check update-feeds.mjs
+
+      - name: Refresh data
+        if: steps.schedule.outputs.run_update == 'true'
+        run: node update-feeds.mjs
+
+      - name: Commit refreshed site and data
+        if: steps.schedule.outputs.run_update == 'true'
+        shell: bash
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
+            echo "No site or data changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Refresh training data"
+          git push
