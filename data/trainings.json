@@ -2,21 +2,21 @@
   "meta": {
     "title": "URI Faculty Development Training Calendar: Available PD from URI's Member Organizations",
     "subtitle": "Available professional development from URI's member organizations",
-    "lastUpdated": "2026-06-10T08:11:29.047Z",
+    "lastUpdated": "2026-06-11T08:49:04.221Z",
     "dataVersion": 1,
     "notes": [
       "The three starter DOCX files were imported locally on June 2, 2026.",
       "The internal training grid labeled DO NOT USE was used only for planning signals such as audience, timing, and topic gaps; its internal presenter and logistics details were not published.",
       "NCFDD, CIRTL, and CUR access were verified from URI or user-provided membership documentation. EAB and AAC&U access notes still need local confirmation for member-only or paid items."
     ],
-    "nextUpdateRecommended": "2026-06-17T08:11:29.047Z",
+    "nextUpdateRecommended": "2026-06-18T08:49:04.221Z",
     "sourceSnapshots": [
       {
         "key": "uri_ncfdd",
         "provider": "NCFDD",
         "label": "URI NCFDD membership page",
         "url": "https://web.uri.edu/diversity/training/national-center-for-faculty-development-diversity-ncfdd/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
         "status": "ok",
         "keywordsFound": [],
         "detectedDates": [],
@@ -28,7 +28,7 @@
         "provider": "NCFDD",
         "label": "NCFDD 14-Day Writing Challenge",
         "url": "https://www.ncfdd.org/programs/14-day-writing-challenge/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
         "status": "ok",
         "keywordsFound": [
           "14-Day Writing Challenge",
@@ -49,14 +49,14 @@
           }
         ],
         "title": "14-Day Writing Challenge",
-        "snippet": "14-Day Writing Challenge - NCFDD Skip to content Member Sign In Become a Member Menu Menu Why NCFDD Solutions Solutions for Administrators Solutions for Faculty Faculty Wellbeing Faculty Mentoring Faculty Productivity Faculty Retention Faculty Development Grant Funding Institutional Success Offerings Programs Faculty Success Program Department Chair Success"
+        "snippet": "14-Day Writing Challenge - NCFDD Skip to content Member Sign In Become a Member Menu Menu Why NCFDD Solutions Solutions for Administrators Solutions for Faculty Solutions for Graduate Students Faculty Wellbeing Faculty Mentoring Faculty Productivity Faculty Retention Faculty Development Grant Funding Institutional Success Offerings Programs Faculty Success P"
       },
       {
         "key": "ncfdd_events",
         "provider": "NCFDD",
         "label": "NCFDD events and webinar archive",
         "url": "https://www.ncfdd.org/category/events-and-webinars/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
         "status": "ok",
         "keywordsFound": [
           "AI",
@@ -98,14 +98,14 @@
           }
         ],
         "title": "Events and Webinars Archives",
-        "snippet": "ductivity Faculty Retention Faculty Development Grant Funding Institutional Success Offerings Programs Faculty Success Program Department Chair Success Program Post-Tenure Pathfinders Courses Building Your Publishing Pipeline Teaching Toolkit in the Age of AI 14-Day Writing Challenge Rethinking Your Research Funding Course Workshops Campus Workshops Rethinki"
+        "snippet": "ductivity Faculty Retention Faculty Development Grant Funding Institutional Success Offerings Programs Faculty Success Program Department Chair Success Program Post-Tenure Pathfinders Courses Building Your Publishing Pipeline Teaching Toolkit in the Age of AI Rethinking Your Research Funding Course 14-Day Writing Challenge Dissertation Success Curriculum Wor"
       },
       {
         "key": "uri_cirtl",
         "provider": "CIRTL",
         "label": "URI ATL CIRTL page",
         "url": "https://web.uri.edu/atl/graduate-students/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
         "status": "ok",
         "keywordsFound": [],
         "detectedDates": [],
@@ -117,7 +117,7 @@
         "provider": "CIRTL",
         "label": "CIRTL upcoming events and courses",
         "url": "https://cirtl.net/events/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
         "status": "ok",
         "keywordsFound": [
           "AI",
@@ -149,7 +149,7 @@
         "provider": "CIRTL",
         "label": "CIRTL Summer 2026 programming",
         "url": "https://cirtl.net/summer-2026-cirtl-network-programming/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
         "status": "ok",
         "keywordsFound": [
           "AI",
@@ -162,16 +162,16 @@
             "iso": "2026-04-24"
           },
           {
-            "label": "July 3, 2024",
-            "iso": "2024-07-03"
+            "label": "December 13, 2023",
+            "iso": "2023-12-13"
           },
           {
-            "label": "June 6, 2023",
-            "iso": "2023-06-06"
+            "label": "June 7, 2024",
+            "iso": "2024-06-07"
           },
           {
-            "label": "November 25, 2025",
-            "iso": "2025-11-25"
+            "label": "September 1, 2023",
+            "iso": "2023-09-01"
           }
         ],
         "title": "Summer 2026 CIRTL Network Programming",
@@ -182,7 +182,7 @@
         "provider": "EAB",
         "label": "EAB Higher Education AI Resource Center",
         "url": "https://eab.com/resources/resource-center/higher-education-ai-resource-center/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
         "status": "ok",
         "keywordsFound": [
           "AI",
@@ -198,7 +198,7 @@
         "provider": "EAB",
         "label": "EAB Construction Kit for Faculty AI Resources",
         "url": "https://eab.com/resources/tool/construction-kit-faculty-ai-resources/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
         "status": "ok",
         "keywordsFound": [
           "AI",
@@ -213,111 +213,205 @@
         "provider": "CUR",
         "label": "CUR Community event calendar",
         "url": "https://community.cur.org/events/calendar",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
-        "status": "error",
-        "keywordsFound": [],
-        "detectedDates": [],
-        "title": "",
-        "snippet": "",
-        "error": "fetch failed"
+        "lastFetched": "2026-06-11T08:49:04.221Z",
+        "status": "ok",
+        "keywordsFound": [
+          "AI",
+          "Mentor",
+          "Undergraduate Research"
+        ],
+        "detectedDates": [
+          {
+            "label": "Jun 15, 2026",
+            "iso": "2026-06-15"
+          },
+          {
+            "label": "Jun 17, 2026",
+            "iso": "2026-06-17"
+          },
+          {
+            "label": "Jun 18, 2026",
+            "iso": "2026-06-18"
+          },
+          {
+            "label": "Jun 22, 2026",
+            "iso": "2026-06-22"
+          },
+          {
+            "label": "Jun 24, 2026",
+            "iso": "2026-06-24"
+          },
+          {
+            "label": "Jul 24, 2026",
+            "iso": "2026-07-24"
+          },
+          {
+            "label": "Nov 13, 2026",
+            "iso": "2026-11-13"
+          }
+        ],
+        "title": "Upcoming Events",
+        "snippet": "Upcoming Events - Council on Undergraduate Research Skip to main content (Press Enter). Sign in Skip auxiliary navigation (Press Enter). Contact Us Rules & Etiquette CUR Homepage Skip main navigation (Press Enter). Toggle navigation Home Forums All Forums My Forums Directory Events Upcoming Events Resources Job Board Volunteer Opportunities Making the Most o"
       },
       {
         "key": "cur_coeur",
         "provider": "CUR",
         "label": "CUR COEUR 2.0",
         "url": "https://www.cur.org/resources-publications/coeur-2-0/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
-        "status": "error",
-        "keywordsFound": [],
-        "detectedDates": [],
-        "title": "",
-        "snippet": "",
-        "error": "fetch failed"
+        "lastFetched": "2026-06-11T08:49:04.221Z",
+        "status": "ok",
+        "keywordsFound": [
+          "COEUR",
+          "Undergraduate Research"
+        ],
+        "detectedDates": [
+          {
+            "label": "December 5, 2024",
+            "iso": "2024-12-05"
+          }
+        ],
+        "title": "Characteristics of Excellence in Undergraduate Research 2.0 - The Council on Undergraduate Research",
+        "snippet": "Stories Position Statements Integrating and Scaffolding Research into Undergraduate Curricula Job Board Student Resources Mentor Resources COEUR COEUR Overview Campus Mission and Culture Administrative Support Research Infrastructure Professional Development Opportunities Recognition External Funding Dissemination Student-Centered Issues Curriculum Summer R"
       },
       {
         "key": "cur_mentoring",
         "provider": "CUR",
         "label": "CUR mentoring insight page",
         "url": "https://www.cur.org/insights/mentoring/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
-        "status": "error",
-        "keywordsFound": [],
+        "lastFetched": "2026-06-11T08:49:04.221Z",
+        "status": "ok",
+        "keywordsFound": [
+          "Mentoring"
+        ],
         "detectedDates": [],
-        "title": "",
-        "snippet": "",
-        "error": "fetch failed"
+        "title": "Mentoring in Engineering Undergraduate Research - The Council on Undergraduate Research",
+        "snippet": "Mentoring in Engineering Undergraduate Research - The Council on Undergraduate Research Skip to the content The Council on Undergraduate Research Join My Account Profile Log In Log Out My Communities Recent Events Recent Purchases Email Preferences Forgot Password Search Search About What is Undergraduate Research? Mission and History Strategic Plan Leadersh"
       },
       {
         "key": "aacu_ai_week",
         "provider": "AAC&U",
         "label": "AAC&U AI Week listing",
         "url": "https://hawksites.newpaltz.edu/fdc/2026/04/21/aac-apr-27-30/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
-        "status": "error",
-        "keywordsFound": [],
-        "detectedDates": [],
-        "title": "",
-        "snippet": "",
-        "error": "fetch failed"
+        "lastFetched": "2026-06-11T08:49:04.221Z",
+        "status": "ok",
+        "keywordsFound": [
+          "AI"
+        ],
+        "detectedDates": [
+          {
+            "label": "Apr 21, 2026",
+            "iso": "2026-04-21"
+          }
+        ],
+        "title": "AAC&#038;U Webinars: Explore AI’s Impact on Higher Education During AI Week; Apr. 27–30",
+        "snippet": "AAC&#038;U Webinars: Explore AI’s Impact on Higher Education During AI Week; Apr. 27–30 &#8211; Faculty Development Center Log In Search Search About FDC Advisory Board Mission and Vision Events FDC event recordings Calendar of Events Faculty Life Work Resources Academic Resources SUNY Policies & Handbooks Faculty Groups LinkedIn Learning Pathways Teaching E"
       },
       {
         "key": "cur_activation",
         "provider": "CUR",
         "label": "CUR Enhanced Membership activation",
         "url": "https://www.cur.org/membership-community/membership/activate-enhanced-membership-benefits/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
-        "status": "error",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
+        "status": "ok",
         "keywordsFound": [],
         "detectedDates": [],
-        "title": "",
-        "snippet": "",
-        "error": "fetch failed"
+        "title": "Activate Enhanced Membership Benefits - The Council on Undergraduate Research",
+        "snippet": "Activate Enhanced Membership Benefits - The Council on Undergraduate Research Skip to the content The Council on Undergraduate Research Join My Account Profile Log In Log Out My Communities Recent Events Recent Purchases Email Preferences Forgot Password Search Search About What is Undergraduate Research? Mission and History Strategic Plan Leadership CUR Imp"
       },
       {
         "key": "cur_connectur",
         "provider": "CUR",
         "label": "CUR ConnectUR",
         "url": "https://www.cur.org/events-services/connectur/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
-        "status": "error",
-        "keywordsFound": [],
-        "detectedDates": [],
-        "title": "",
-        "snippet": "",
-        "error": "fetch failed"
+        "lastFetched": "2026-06-11T08:49:04.221Z",
+        "status": "ok",
+        "keywordsFound": [
+          "ConnectUR",
+          "undergraduate research",
+          "conference"
+        ],
+        "detectedDates": [
+          {
+            "label": "June 18, 2026",
+            "iso": "2026-06-18"
+          },
+          {
+            "label": "June 24, 2026",
+            "iso": "2026-06-24"
+          },
+          {
+            "label": "June 17, 2026",
+            "iso": "2026-06-17"
+          },
+          {
+            "label": "June 22, 2026",
+            "iso": "2026-06-22"
+          },
+          {
+            "label": "June 23, 2026",
+            "iso": "2026-06-23"
+          },
+          {
+            "label": "June 15, 2026",
+            "iso": "2026-06-15"
+          },
+          {
+            "label": "July 15, 2026",
+            "iso": "2026-07-15"
+          },
+          {
+            "label": "June 5, 2026",
+            "iso": "2026-06-05"
+          }
+        ],
+        "title": "ConnectUR - The Council on Undergraduate Research",
+        "snippet": "ConnectUR - The Council on Undergraduate Research Skip to the content The Council on Undergraduate Research Join My Account Profile Log In Log Out My Communities Recent Events Recent Purchases Email Preferences Forgot Password Search Search About What is Undergraduate Research? Mission and History Strategic Plan Leadership CUR Impact Report Code of Conduct M"
       },
       {
         "key": "cur_dialogues",
         "provider": "CUR",
         "label": "CUR Grant Dialogues",
         "url": "https://www.cur.org/events-services/dialogues/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
-        "status": "error",
-        "keywordsFound": [],
-        "detectedDates": [],
-        "title": "",
-        "snippet": "",
-        "error": "fetch failed"
+        "lastFetched": "2026-06-11T08:49:04.221Z",
+        "status": "ok",
+        "keywordsFound": [
+          "Grant Dialogues",
+          "funding",
+          "professional development"
+        ],
+        "detectedDates": [
+          {
+            "label": "February 10, 2026",
+            "iso": "2026-02-10"
+          },
+          {
+            "label": "February 11, 2026",
+            "iso": "2026-02-11"
+          }
+        ],
+        "title": "Grant Dialogues - The Council on Undergraduate Research",
+        "snippet": "Grant Dialogues - The Council on Undergraduate Research Skip to the content The Council on Undergraduate Research Join My Account Profile Log In Log Out My Communities Recent Events Recent Purchases Email Preferences Forgot Password Search Search About What is Undergraduate Research? Mission and History Strategic Plan Leadership CUR Impact Report Code of Con"
       },
       {
         "key": "cur_on_demand",
         "provider": "CUR",
         "label": "CUR on-demand learning courses",
         "url": "https://www.cur.org/events-services/on-demand-learning-courses/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
-        "status": "error",
-        "keywordsFound": [],
+        "lastFetched": "2026-06-11T08:49:04.221Z",
+        "status": "ok",
+        "keywordsFound": [
+          "AI"
+        ],
         "detectedDates": [],
-        "title": "",
-        "snippet": "",
-        "error": "fetch failed"
+        "title": "On-Demand Learning Courses - The Council on Undergraduate Research",
+        "snippet": "to the content The Council on Undergraduate Research Join My Account Profile Log In Log Out My Communities Recent Events Recent Purchases Email Preferences Forgot Password Search Search About What is Undergraduate Research? Mission and History Strategic Plan Leadership CUR Impact Report Code of Conduct Membership + Community Membership Divisions Member Direc"
       },
       {
         "key": "cirtl_instructor_materials",
         "provider": "CIRTL",
         "label": "CIRTL Instructor Materials",
         "url": "https://cirtl.net/instructor-materials/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
         "status": "ok",
         "keywordsFound": [
           "Instructor Materials",
@@ -332,7 +426,7 @@
         "provider": "CIRTL",
         "label": "CIRTL Teaching-as-Research",
         "url": "https://cirtl.net/teaching-as-research/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
         "status": "ok",
         "keywordsFound": [
           "Teaching-as-Research"
@@ -346,7 +440,7 @@
         "provider": "CIRTL",
         "label": "CIRTL Disciplinary Learning Communities",
         "url": "https://cirtl.net/disciplinary-learning-communities/",
-        "lastFetched": "2026-06-10T08:11:29.047Z",
+        "lastFetched": "2026-06-11T08:49:04.221Z",
         "status": "ok",
         "keywordsFound": [
           "Disciplinary Learning Communities",
@@ -359,10 +453,10 @@
     ],
     "updateSummary": {
       "checkedSources": 19,
-      "successfulSources": 11,
+      "successfulSources": 19,
       "detectedItems": 0,
       "addedDiscoveries": 0,
-      "updatedKnownItems": 18
+      "updatedKnownItems": 31
     },
     "documentImports": [
       {
@@ -468,7 +562,7 @@
       "description": "A practical AI session focused on deeper learning, creativity, human-centered innovation, critical thinking, collaboration, and reflective practice.",
       "whyInclude": "Strong first summer AI session for faculty who want to move beyond efficiency toward thoughtful course and research design.",
       "sourceUrl": "https://cirtl.net/summer-2026-cirtl-network-programming/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cirtl-udl-ai-design-studio-2026",
@@ -498,7 +592,7 @@
       "description": "Participants redesign one real teaching artifact using Universal Design for Learning and AI as a design assistant.",
       "whyInclude": "Applied, artifact-producing course that can support course revision and teaching evidence for review files.",
       "sourceUrl": "https://cirtl.net/event/udl-ai-design-studio/2026-06-26/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "ncfdd-writing-challenge-july-2026",
@@ -526,7 +620,7 @@
       "description": "A structured two-week challenge in which participants commit to at least 30 minutes of writing each weekday and log progress in an online community.",
       "whyInclude": "Creates summer writing momentum before fall preparation begins.",
       "sourceUrl": "https://www.ncfdd.org/programs/14-day-writing-challenge/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cirtl-critical-ai-literacy-2026",
@@ -585,7 +679,7 @@
       "description": "A webinar for faculty who teach writing or use writing for learning and assessment in an AI-disrupted context.",
       "whyInclude": "Directly connects two priority themes: writing pedagogy and generative AI.",
       "sourceUrl": "https://hawksites.newpaltz.edu/fdc/2026/04/21/aac-apr-27-30/",
-      "lastVerified": "2026-06-09"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "ncfdd-writing-challenge-august-2026",
@@ -613,7 +707,7 @@
       "description": "A structured two-week challenge to rebuild writing routines before the academic year begins.",
       "whyInclude": "Well-timed pre-semester writing reset.",
       "sourceUrl": "https://www.ncfdd.org/programs/14-day-writing-challenge/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "eab-construction-kit-faculty-ai-resources",
@@ -643,7 +737,7 @@
       "description": "Toolkit for building faculty AI policy guidance and resource lists for curricular and teaching practice.",
       "whyInclude": "Useful for departments that need a practical AI resource list before fall syllabi are finalized.",
       "sourceUrl": "https://eab.com/resources/tool/construction-kit-faculty-ai-resources/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "ncfdd-develop-daily-writing-practice-2026",
@@ -672,7 +766,7 @@
       "description": "Writing routine webinar that explicitly connects daily writing practice to tenure and promotion expectations.",
       "whyInclude": "Good first-month-of-fall intervention for sustainable scholarly productivity.",
       "sourceUrl": "https://www.ncfdd.org/events/members-only-develop-daily-writing-practice/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "ncfdd-writing-challenge-september-2026",
@@ -700,7 +794,7 @@
       "description": "A structured writing challenge after fall teaching routines have started to settle.",
       "whyInclude": "A timely fall writing push for manuscripts, grant proposals, books, exhibits, and other scholarly work.",
       "sourceUrl": "https://www.ncfdd.org/programs/14-day-writing-challenge/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "ncfdd-mastering-academic-time-management-2026",
@@ -728,7 +822,7 @@
       "description": "Time management, academic writing, support networks, and alignment with institutional and personal priorities.",
       "whyInclude": "Good fit for new and early-career faculty navigating writing expectations and first-year overload.",
       "sourceUrl": "https://www.ncfdd.org/events/members-only-mastering-academic-time-management/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "ncfdd-ais-go-marching-on-recording",
@@ -756,7 +850,7 @@
       "description": "Practical and ethical approaches to AI in teaching and learning, including hands-on activities and draft materials.",
       "whyInclude": "Works well as a fall teaching-and-learning discussion session after faculty have seen AI issues in live courses.",
       "sourceUrl": "https://www.ncfdd.org/events-and-webinars/finding-way-with-ai-education/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "eab-higher-ed-ai-resource-center",
@@ -786,7 +880,7 @@
       "description": "Research, strategy, and guidance on AI across student success, enrollment, and higher education strategy.",
       "whyInclude": "Useful for chairs, deans, and faculty leaders who need governance and institutional-strategy context.",
       "sourceUrl": "https://eab.com/resources/resource-center/higher-education-ai-resource-center/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cur-coeur-2-0-webinar",
@@ -816,7 +910,7 @@
       "description": "COEUR 2.0 offers a framework for building successful and accessible undergraduate research programs.",
       "whyInclude": "Helps faculty and programs document undergraduate research mentoring as teaching, scholarship, and service evidence.",
       "sourceUrl": "https://www.cur.org/resources-publications/coeur-2-0/",
-      "lastVerified": "2026-06-09"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cur-mentoring-webinar-archive",
@@ -845,7 +939,7 @@
       "description": "Includes mentoring resources such as Mentoring through Failure and Mentoring in Engineering Undergraduate Research.",
       "whyInclude": "Can support faculty in documenting undergraduate mentoring quality and outcomes in annual review and promotion materials.",
       "sourceUrl": "https://www.cur.org/insights/mentoring/",
-      "lastVerified": "2026-06-09"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "ncfdd-core-curriculum-2027",
@@ -875,7 +969,7 @@
       "description": "NCFDD core and guest expert webinars, member library, accountability buddy matches, and writing resources.",
       "whyInclude": "A flexible January restart for faculty planning, writing, boundaries, mentoring networks, and productivity.",
       "sourceUrl": "https://web.uri.edu/diversity/training/national-center-for-faculty-development-diversity-ncfdd/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cur-teacher-research-thinking-reasoning-ai",
@@ -904,7 +998,7 @@
       "description": "Webinar on teacher research thinking and reasoning AI, including benefits and risks.",
       "whyInclude": "Good AI option for faculty thinking about inquiry, student research, and education contexts.",
       "sourceUrl": "https://www.cur.org/membership-community/divisions/education-division/",
-      "lastVerified": "2026-06-09"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "eab-ai-at-the-tipping-point",
@@ -993,7 +1087,7 @@
       "description": "Placeholder to refresh the page with the newest CIRTL AI, inclusive teaching, and teaching-as-research offerings.",
       "whyInclude": "CIRTL schedules change by semester and should be refreshed rather than frozen.",
       "sourceUrl": "https://cirtl.net/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "aacu-ai-week-refresh-2027",
@@ -1077,7 +1171,7 @@
       "description": "Structured, coached productivity and writing program.",
       "whyInclude": "Valuable but not part of the free/basic institutional membership list.",
       "sourceUrl": "https://www.ncfdd.org/programs/faculty-success-program/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "ncfdd-teaching-toolkit-ai-hold",
@@ -1103,7 +1197,7 @@
       "description": "Course on assessment, grading, teaching workload, and AI-informed teaching decisions.",
       "whyInclude": "Strong topic fit, but it should be held unless funding is available.",
       "sourceUrl": "https://www.ncfdd.org/programs/teaching-toolkit/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cur-connectur-2026-hold",
@@ -1132,7 +1226,7 @@
       "description": "CUR's annual conference focuses on practical strategies, leadership insights, inclusive approaches, emerging trends, scalable practices, and campus impact in undergraduate research.",
       "whyInclude": "Useful, but should not appear in a free/membership list unless covered or confirmed free.",
       "sourceUrl": "https://www.cur.org/events-services/connectur/",
-      "lastVerified": "2026-06-09"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "detected-ncfdd-every-summer-needs-a-plan-3",
@@ -1162,7 +1256,7 @@
       "description": "ductivity Faculty Retention Faculty Development Grant Funding Institutional Success Offerings Programs Faculty Success Program Department Chair Success Program Post-Tenure Pathfinders Courses Building Your Publishing Pipeline Teaching Toolkit in the Age of AI 14-Day Writing Challenge Rethinking Your Research Funding Course Workshops Campus Workshops Rethinki",
       "whyInclude": "Newly detected by the updater because the source page matched the calendar's priority topics.",
       "sourceUrl": "https://www.ncfdd.org/category/events-and-webinars/",
-      "lastVerified": "2026-06-10",
+      "lastVerified": "2026-06-11",
       "detectedByUpdater": true
     },
     {
@@ -1343,7 +1437,7 @@
       "description": "Materials from selected CIRTL courses and workshops, including syllabi, course plans, handouts, slides, and assignments.",
       "whyInclude": "Useful for faculty adapting evidence-based teaching materials without waiting for a live course.",
       "sourceUrl": "https://cirtl.net/instructor-materials/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cirtl-teaching-as-research-pathway",
@@ -1373,7 +1467,7 @@
       "description": "Teaching-as-Research uses deliberate, systematic, and reflective inquiry to improve teaching practices and student learning outcomes.",
       "whyInclude": "Helps faculty connect teaching improvement to evidence that can be documented in annual review or promotion materials.",
       "sourceUrl": "https://cirtl.net/teaching-as-research/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cirtl-disciplinary-learning-communities",
@@ -1403,7 +1497,7 @@
       "description": "Two curricula and survey tools that departments can use to facilitate disciplinary learning communities around teaching and discipline-based education research.",
       "whyInclude": "Gives chairs and programs a ready structure for department-level faculty development.",
       "sourceUrl": "https://cirtl.net/disciplinary-learning-communities/",
-      "lastVerified": "2026-06-10"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cur-enhanced-membership-activation",
@@ -1434,7 +1528,7 @@
       "description": "Faculty, mentors, administrators, students, and staff can activate CUR membership benefits and access CUR communities, divisions, resources, and member materials.",
       "whyInclude": "This should be the first CUR item promoted so faculty can unlock the rest of the CUR resources.",
       "sourceUrl": "https://www.cur.org/membership-community/membership/activate-enhanced-membership-benefits/",
-      "lastVerified": "2026-06-09"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cur-community-forums",
@@ -1464,7 +1558,7 @@
       "description": "CUR offers online forums for disciplinary divisions, jobs, student journals, and resource-sharing among undergraduate research mentors and program leaders.",
       "whyInclude": "A lightweight way for faculty to find discipline-specific undergraduate research mentoring examples and colleagues.",
       "sourceUrl": "https://community.cur.org/home",
-      "lastVerified": "2026-06-09"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cur-publications-member-resources",
@@ -1522,7 +1616,7 @@
       "description": "A CUR and NGMA professional development event on navigating the funding landscape.",
       "whyInclude": "Strong writing/grants fit, but should not be advertised as free without cost confirmation.",
       "sourceUrl": "https://www.cur.org/events-services/dialogues/",
-      "lastVerified": "2026-06-09"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "cur-on-demand-ai-writing-courses-hold",
@@ -1552,7 +1646,7 @@
       "description": "Potentially relevant courses include Ethical Use of AI in Higher Education, Introduction to ChatGPT for Academic Research, Master Class on Grant Writing Best Practices, and Building Mentorship and Student Supervision Skills for University Faculty.",
       "whyInclude": "Excellent topic fit for AI, writing, and mentoring, but cost status needs review.",
       "sourceUrl": "https://www.cur.org/events-services/on-demand-learning-courses/",
-      "lastVerified": "2026-06-09"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "uri-cur-ur-welcome-packet-session",
@@ -1581,7 +1675,7 @@
       "description": "A short orientation module that explains URI's CUR membership, how to activate benefits, how undergraduate research supports faculty work, and how to document undergraduate research mentoring for annual review and promotion.",
       "whyInclude": "The CUR resource-system document specifically recommends a new-faculty welcome packet, activation instructions, inspiring UR examples, and guidance on noting UR activity for P&T.",
       "sourceUrl": "https://www.cur.org/membership-community/membership/activate-enhanced-membership-benefits/",
-      "lastVerified": "2026-06-09"
+      "lastVerified": "2026-06-11"
     },
     {
       "id": "detected-cur-connectur-2026-onsite-only-or-bundle-registration-deadline-1",
@@ -1607,7 +1701,7 @@
       "description": "Upcoming Events - Council on Undergraduate Research Skip to main content (Press Enter). Sign in Skip auxiliary navigation (Press Enter). Contact Us Rules & Etiquette CUR Homepage Skip main navigation (Press Enter). Toggle navigation Home Forums All Forums My Forums Directory Events Upcoming Events Resources Job Board Volunteer Opportunities Making the Most o",
       "whyInclude": "Newly detected by the updater because the source page matched the calendar's priority topics.",
       "sourceUrl": "https://community.cur.org/events/calendar",
-      "lastVerified": "2026-06-09",
+      "lastVerified": "2026-06-11",
       "detectedByUpdater": true
     },
     {
@@ -1634,7 +1728,7 @@
       "description": "Upcoming Events - Council on Undergraduate Research Skip to main content (Press Enter). Sign in Skip auxiliary navigation (Press Enter). Contact Us Rules & Etiquette CUR Homepage Skip main navigation (Press Enter). Toggle navigation Home Forums All Forums My Forums Directory Events Upcoming Events Resources Job Board Volunteer Opportunities Making the Most o",
       "whyInclude": "Newly detected by the updater because the source page matched the calendar's priority topics.",
       "sourceUrl": "https://community.cur.org/events/calendar",
-      "lastVerified": "2026-06-09",
+      "lastVerified": "2026-06-11",
       "detectedByUpdater": true
     },
     {
@@ -1661,7 +1755,7 @@
       "description": "Upcoming Events - Council on Undergraduate Research Skip to main content (Press Enter). Sign in Skip auxiliary navigation (Press Enter). Contact Us Rules & Etiquette CUR Homepage Skip main navigation (Press Enter). Toggle navigation Home Forums All Forums My Forums Directory Events Upcoming Events Resources Job Board Volunteer Opportunities Making the Most o",
       "whyInclude": "Newly detected by the updater because the source page matched the calendar's priority topics.",
       "sourceUrl": "https://community.cur.org/events/calendar",
-      "lastVerified": "2026-06-09",
+      "lastVerified": "2026-06-11",
       "detectedByUpdater": true
     }
   ]
