@@ -327,7 +327,8 @@ function renderMetrics(items) {
 }
 
 function renderAccessNotes() {
-  els.accessNotes.innerHTML = state.data.accessNotes.map((note) => `
+  const notes = state.data.accessNotes.filter((note) => !note.provider.startsWith("URI"));
+  els.accessNotes.innerHTML = notes.map((note) => `
     <article class="access-note">
       <span class="badge ${note.status}">${escapeHtml(note.provider)}</span>
       <div>
