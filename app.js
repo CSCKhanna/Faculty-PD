@@ -126,42 +126,6 @@ async function loadData() {
   }
 }
 
-async function detectServer() {
-  try {
-    const response = await fetch("/api/status", { cache: "no-store" });
-    if (!response.ok) throw new Error("No updater server");
-    const status = await response.json();
-    state.serverEnabled = true;
-    els.refreshButton.disabled = false;
-    els.serverStatus.textContent = status.message || "Updater server connected.";
-  } catch {
-    state.serverEnabled = false;
-    els.refreshButton.disabled = true;
-    els.refreshButton.title = "Start the included Node server to enable source refresh.";
-    els.serverStatus.textContent = "Static mode: filters and exports work; source refresh needs the included server.";
-  }
-}
-
-async function updateNow() {
-  if (!state.serverEnabled) return;
-  els.refreshButton.disabled = true;
-  els.refreshButton.textContent = "Updating...";
-  els.serverStatus.textContent = "Refreshing provider pages...";
-
-  try {
-    const response = await fetch("/api/update", { method: "POST" });
-    const result = await response.json();
-    if (!response.ok) throw new Error(result.error || "Update failed");
-    els.serverStatus.textContent = `Refreshed ${result.checkedSources} sources; ${result.detectedItems} detected items reviewed.`;
-    await loadData();
-  } catch (error) {
-    els.serverStatus.textContent = error.message;
-  } finally {
-    els.refreshButton.disabled = false;
-    els.refreshButton.innerHTML = `<svg class="button-icon" aria-hidden="true"><use href="#icon-refresh"></use></svg>Update now`;
-  }
-}
-
 function buildFilterControls() {
   const trainings = state.data.trainings;
   const providers = unique(trainings.map((item) => item.provider)).sort();
@@ -377,6 +341,7 @@ function renderCards(items) {
         <div class="topic-list">${item.topics.map((topic) => `<span class="topic-pill">${escapeHtml(topic)}</span>`).join("")}</div>
         <p class="description"><strong>Access:</strong> ${escapeHtml(item.access)}</p>
         <div class="card-actions">
+          ${item.registrationUrl ? `<a class="text-link" href="${escapeAttr(item.registrationUrl)}" target="_blank" rel="noopener">Registration</a>` : ""}
           <a class="text-link" href="${escapeAttr(item.sourceUrl)}" target="_blank" rel="noopener">
             <svg class="button-icon" aria-hidden="true"><use href="#icon-link"></use></svg>
             Source
@@ -429,6 +394,7 @@ function renderTimeline(items) {
             <p class="date-line">${escapeHtml(item.dateLabel)}</p>
             <p class="description">${escapeHtml(item.whyInclude)}</p>
             <div class="timeline-actions">
+              ${item.registrationUrl ? `<a class="text-link" href="${escapeAttr(item.registrationUrl)}" target="_blank" rel="noopener">Registration</a>` : ""}
               <a class="text-link" href="${escapeAttr(item.sourceUrl)}" target="_blank" rel="noopener">
                 <svg class="button-icon" aria-hidden="true"><use href="#icon-link"></use></svg>
                 Source
@@ -451,6 +417,7 @@ function renderTable(items) {
           <th>Provider</th>
           <th>Topics</th>
           <th>Access</th>
+          <th>Registration</th>
           <th>Source</th>
         </tr>
       </thead>
@@ -462,6 +429,7 @@ function renderTable(items) {
             <td>${escapeHtml(item.provider)}</td>
             <td>${escapeHtml(item.topics.join(", "))}</td>
             <td>${escapeHtml(item.access)}</td>
+            <td>${item.registrationUrl ? `<a href="${escapeAttr(item.registrationUrl)}" target="_blank" rel="noopener">Register</a>` : "—"}</td>
             <td><a href="${escapeAttr(item.sourceUrl)}" target="_blank" rel="noopener">Open</a></td>
           </tr>
         `).join("")}
