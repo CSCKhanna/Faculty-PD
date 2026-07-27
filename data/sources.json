@@ -2,7 +2,7 @@
   "sources": [
     {
       "key": "uri_atl_fall_2026",
-      "provider": "URI",
+      "provider": "URI-ATL",
       "label": "URI ATL Fall 2026 programming",
       "url": "https://web.uri.edu/atl/fall-2026-atl-programming/",
       "type": "event-page",
