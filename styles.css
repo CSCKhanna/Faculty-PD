@@ -589,6 +589,10 @@ main {
   background: var(--violet);
 }
 
+.training-top.provider-Other {
+  background: var(--coral);
+}
+
 .training-body {
   display: flex;
   flex-direction: column;
