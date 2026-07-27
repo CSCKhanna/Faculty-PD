@@ -6,6 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const dataPath = path.join(__dirname, "data", "trainings.json");
 const sourcesPath = path.join(__dirname, "data", "sources.json");
+const DISPLAY_TIME_ZONE = "America/New_York";
+const EXPIRING_DATE_PRECISIONS = new Set(["exact", "detected"]);
 
 const TOPIC_KEYWORDS = {
   AI: ["ai", "artificial intelligence", "generative ai", "chatgpt"],
@@ -23,7 +25,7 @@ export async function updateFeeds() {
   const snapshots = [];
   const discoveries = [];
   const now = new Date();
-  const today = now.toISOString().slice(0, 10);
+  const today = dateInTimeZone(now, DISPLAY_TIME_ZONE);
 
   for (const source of sources) {
     const snapshot = {
@@ -68,6 +70,7 @@ export async function updateFeeds() {
 
   const merged = mergeDiscoveries(data.trainings, discoveries);
   data.trainings = merged.trainings;
+  const expiration = reconcileExpiredItems(data.trainings, today);
   data.meta.lastUpdated = now.toISOString();
   data.meta.nextUpdateRecommended = addDays(now, 7).toISOString();
   data.meta.sourceSnapshots = snapshots;
@@ -76,7 +79,9 @@ export async function updateFeeds() {
     successfulSources: snapshots.filter((snapshot) => snapshot.status === "ok").length,
     detectedItems: discoveries.length,
     addedDiscoveries: merged.added,
-    updatedKnownItems: data.trainings.filter((item) => item.lastVerified === today).length
+    updatedKnownItems: data.trainings.filter((item) => item.lastVerified === today).length,
+    archivedPastItems: expiration.archived,
+    restoredItems: expiration.restored
   };
 
   await fs.writeFile(dataPath, `${JSON.stringify(data, null, 2)}\n`);
@@ -85,8 +90,61 @@ export async function updateFeeds() {
     checkedSources: snapshots.length,
     successfulSources: snapshots.filter((snapshot) => snapshot.status === "ok").length,
     detectedItems: discoveries.length,
-    addedDiscoveries: merged.added
+    addedDiscoveries: merged.added,
+    archivedPastItems: expiration.archived,
+    restoredItems: expiration.restored
   };
+}
+
+export function reconcileExpiredItems(trainings, today) {
+  let archived = 0;
+  let restored = 0;
+
+  for (const item of trainings) {
+    if (!isExpirationEligible(item)) continue;
+
+    if (item.endDate < today && item.status !== "expired") {
+      item.statusBeforeExpiry = item.status;
+      item.status = "expired";
+      item.expiredAt = today;
+      archived += 1;
+      continue;
+    }
+
+    if (item.endDate >= today && item.status === "expired" && item.statusBeforeExpiry) {
+      item.status = item.statusBeforeExpiry;
+      delete item.statusBeforeExpiry;
+      delete item.expiredAt;
+      restored += 1;
+    }
+  }
+
+  return { archived, restored };
+}
+
+function isExpirationEligible(item) {
+  return (
+    item.keepAfterEnd !== true &&
+    EXPIRING_DATE_PRECISIONS.has(item.datePrecision) &&
+    isIsoDate(item.endDate)
+  );
+}
+
+function isIsoDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value || "")) return false;
+  const date = new Date(`${value}T00:00:00Z`);
+  return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
+}
+
+function dateInTimeZone(date, timeZone) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(date);
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
 }
 
 async function fetchText(url) {
