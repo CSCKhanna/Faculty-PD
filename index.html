@@ -48,7 +48,7 @@
 
     <main>
       <section class="toolbar" aria-label="Training filters">
-        <label class="search-box has-tooltip" data-tooltip="Search by training title, provider, topic, description, access note, or source.">
+        <label class="search-box has-tooltip" data-tooltip="Search by training title, provider, topic, audience, description, access note, or source.">
           <svg class="button-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
           <input id="searchInput" type="search" placeholder="Search trainings, descriptions, sources">
         </label>
@@ -80,7 +80,7 @@
         <button id="viewCards" class="mode-button active has-tooltip" type="button" aria-pressed="true" data-tooltip="Browse full training cards with dates, access notes, topics, and source links.">Cards</button>
         <button id="viewTimeline" class="mode-button has-tooltip" type="button" aria-pressed="false" data-tooltip="Group visible trainings by month.">Timeline</button>
         <button id="viewTable" class="mode-button has-tooltip" type="button" aria-pressed="false" data-tooltip="See a compact spreadsheet-style version of the visible list.">Table</button>
-        <button id="guideButton" class="icon-button has-tooltip" type="button" aria-expanded="false" aria-controls="guidePanel" data-tooltip="Open a short guide to the filters, buttons, and list categories.">
+        <button id="guideButton" class="icon-button has-tooltip" type="button" aria-expanded="false" aria-controls="guidePanel" data-tooltip="Open a short guide to the filters, buttons, and audience categories.">
           <svg class="button-icon" aria-hidden="true"><use href="#icon-help"></use></svg>
           Guide
         </button>
@@ -110,7 +110,7 @@
         <div class="guide-grid">
           <article>
             <h3>Filters</h3>
-            <p><strong>Search</strong> narrows by title, provider, topic, description, access note, or source.</p>
+            <p><strong>Search</strong> narrows by title, provider, topic, audience, description, access note, or source.</p>
             <p><strong>Sort</strong> orders by date, provider, or priority.</p>
             <p><strong>Timing</strong> limits the list to all year, upcoming, summer, fall, or spring.</p>
             <p><strong>Verified/free only</strong> hides items that need local access or cost confirmation.</p>
@@ -123,23 +123,21 @@
             <p><strong>CSV</strong>, <strong>Calendar</strong>, <strong>Announcement</strong>, and <strong>Print</strong> export the current filtered list.</p>
           </article>
           <article>
-            <h3>List Categories</h3>
-            <p><strong>Recommended</strong> is the main curated list. Click again to remove it from the current filter.</p>
-            <p><strong>Advertise First</strong> shows the highest-confidence items to promote soon and can be combined with other list categories.</p>
-            <p><strong>Newly Detected</strong> shows items found by the updater.</p>
-            <p><strong>Hold List</strong> keeps useful items that need sponsorship or cost/access screening.</p>
-            <p><strong>All</strong> clears the List filters while keeping any Provider, Topic, Search, Timing, or Verified/free filters.</p>
+            <h3>Audience</h3>
+            <p><strong>Audience chips</strong> show trainings for selected career stages and appointment types.</p>
+            <p>Select more than one audience to combine their matching opportunities.</p>
+            <p>Click an active audience chip again to remove it from the filter.</p>
           </article>
           <article>
             <h3>Provider and Topic Chips</h3>
             <p><strong>Provider chips</strong> show only trainings from selected organizations or categories such as Other.</p>
-            <p><strong>Topic chips</strong> show only selected themes such as AI, Writing, Promotion & Tenure, Teaching, or Mentoring.</p>
+            <p><strong>Topic chips</strong> show selected themes such as AI, Writing, Promotion & Tenure, Teaching, or Mentoring. Career stages are grouped under Audience.</p>
             <p><strong>Source</strong> links open the provider or evidence page for a card or access note.</p>
           </article>
         </div>
       </section>
 
-      <section class="chips-area" aria-label="Provider and topic filters">
+      <section class="chips-area" aria-label="Provider, topic, and audience filters">
         <div>
           <h2>Providers</h2>
           <div id="providerChips" class="chip-row"></div>
@@ -149,8 +147,8 @@
           <div id="topicChips" class="chip-row"></div>
         </div>
         <div>
-          <h2>List</h2>
-          <div id="statusChips" class="chip-row"></div>
+          <h2>Audience</h2>
+          <div id="audienceChips" class="chip-row"></div>
         </div>
       </section>
 
@@ -175,7 +173,7 @@
 
       <section class="results-shell" aria-label="Training results">
         <div class="results-head">
-          <h2 id="resultsTitle">Recommended Trainings</h2>
+          <h2 id="resultsTitle">All Trainings</h2>
           <span id="resultsCount"></span>
         </div>
         <div id="emptyState" class="empty-state" hidden>No trainings match the current filters.</div>
@@ -195,6 +193,6 @@
       <span id="serverStatus">Updates run automatically daily at 11:59 p.m. Eastern.</span>
     </footer>
 
-    <script src="./app.js?v=20260727-access-notes" type="module"></script>
+    <script src="./app.js?v=20260727-audience-filter" type="module"></script>
   </body>
 </html>
