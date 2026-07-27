@@ -54,7 +54,9 @@ export async function updateFeeds() {
       snapshot.snippet = relevantSnippet(text, source.match || []);
 
       refreshKnownItems(data.trainings, source, today);
-      discoveries.push(...discoverItems({ source, title, text, headings, detectedDates, today, trainings: data.trainings }));
+      if (source.discover !== false) {
+        discoveries.push(...discoverItems({ source, title, text, headings, detectedDates, today, trainings: data.trainings }));
+      }
       refreshNcfddWritingChallenge(data.trainings, source, text, today);
     } catch (error) {
       snapshot.status = "error";
@@ -100,7 +102,8 @@ async function fetchText(url) {
 
 function refreshKnownItems(trainings, source, today) {
   for (const item of trainings) {
-    if (item.sourceUrl === source.url || sameHost(item.sourceUrl, source.url)) {
+    const matchesPrefix = source.itemIdPrefix && item.id.startsWith(source.itemIdPrefix);
+    if (matchesPrefix || item.sourceUrl === source.url || sameHost(item.sourceUrl, source.url)) {
       if (source.provider === item.provider || source.url === item.sourceUrl) {
         item.lastVerified = today;
       }
