@@ -5,7 +5,8 @@ const URI_PROVIDER_CHIPS = [
   "URI-Academic Affairs",
   "URI-Library",
   "URI-ITS",
-  "URI-IACR"
+  "URI-IACR",
+  "URI-Provost's Office"
 ];
 
 const els = {
