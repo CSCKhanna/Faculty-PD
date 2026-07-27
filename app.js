@@ -8,6 +8,41 @@ const URI_PROVIDER_CHIPS = [
   "URI-IACR",
   "URI-Provost's Office"
 ];
+const AUDIENCE_GROUPS = [
+  {
+    label: "Graduate Students & Postdocs",
+    aliases: ["Future faculty", "Graduate students", "Graduate teaching assistants", "Postdocs"]
+  },
+  {
+    label: "New Faculty",
+    aliases: ["New faculty", "New full-time faculty"]
+  },
+  {
+    label: "Early-Career Faculty",
+    aliases: ["Early-career faculty", "Pre-tenure faculty"]
+  },
+  {
+    label: "Mid-Career Faculty",
+    aliases: ["Mid-career faculty", "Associate professors"]
+  },
+  {
+    label: "Senior Faculty",
+    aliases: ["Senior faculty", "Full professors"]
+  },
+  {
+    label: "Part-Time Faculty",
+    aliases: ["Part-time faculty", "URI employees who teach part time"]
+  },
+  {
+    label: "Teaching-Track Faculty",
+    aliases: ["Teaching-track faculty"]
+  },
+  {
+    label: "Tenure-Track Faculty",
+    aliases: ["Tenure-track faculty"]
+  }
+];
+const AUDIENCE_TOPIC_LABELS = new Set(["New Faculty", "Part-time Faculty"]);
 
 const els = {
   search: document.querySelector("#searchInput"),
@@ -16,7 +51,7 @@ const els = {
   verifiedOnly: document.querySelector("#verifiedOnly"),
   providerChips: document.querySelector("#providerChips"),
   topicChips: document.querySelector("#topicChips"),
-  statusChips: document.querySelector("#statusChips"),
+  audienceChips: document.querySelector("#audienceChips"),
   metricShowing: document.querySelector("#metricShowing"),
   metricVerified: document.querySelector("#metricVerified"),
   metricPriority: document.querySelector("#metricPriority"),
@@ -51,7 +86,7 @@ const state = {
   query: "",
   providers: new Set(),
   topics: new Set(),
-  listFilters: new Set(["recommended"]),
+  audiences: new Set(),
   sort: "date",
   time: "all",
   verifiedOnly: false
@@ -141,13 +176,17 @@ function buildFilterControls() {
     ...availableProviders.filter((provider) => !provider.startsWith("URI-")).sort(),
     ...URI_PROVIDER_CHIPS
   ];
-  const topics = unique(trainings.flatMap((item) => item.topics)).sort();
+  const topics = unique(trainings.flatMap((item) => item.topics))
+    .filter((topic) => !AUDIENCE_TOPIC_LABELS.has(topic))
+    .sort();
+  const audienceGroups = AUDIENCE_GROUPS.filter((group) => trainings.some((item) => {
+    return item.audience?.some((audience) => group.aliases.includes(audience));
+  }));
 
   els.providerChips.innerHTML = providers.map((provider) => chipHtml(provider, "provider")).join("");
   els.topicChips.innerHTML = topics.map((topic) => chipHtml(topic, "topic")).join("");
-  els.statusChips.innerHTML = listFilterOptions().map((option) => {
-    const isActive = option.value === "all" ? state.listFilters.size === 0 : state.listFilters.has(option.value);
-    return `<button class="chip has-tooltip ${isActive ? "active" : ""}" type="button" data-list-filter="${option.value}" data-tooltip="${escapeAttr(option.tooltip)}">${escapeHtml(option.label)}</button>`;
+  els.audienceChips.innerHTML = audienceGroups.map((group) => {
+    return `<button class="chip has-tooltip" type="button" data-audience="${escapeAttr(group.label)}" data-tooltip="Show trainings intended for ${escapeAttr(group.label.toLowerCase())}.">${escapeHtml(group.label)}</button>`;
   }).join("");
 
   els.providerChips.querySelectorAll("button").forEach((button) => {
@@ -156,39 +195,9 @@ function buildFilterControls() {
   els.topicChips.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", () => toggleSetChip(button, state.topics));
   });
-  els.statusChips.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("click", () => toggleListFilter(button));
+  els.audienceChips.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => toggleSetChip(button, state.audiences));
   });
-}
-
-function listFilterOptions() {
-  return [
-    {
-      value: "recommended",
-      label: "Recommended",
-      tooltip: "Main curated faculty-facing list. Click to include or remove recommended items."
-    },
-    {
-      value: "advertise",
-      label: "Advertise First",
-      tooltip: "Highest-confidence items to promote soon. Click to combine with other list categories."
-    },
-    {
-      value: "discovered",
-      label: "Newly Detected",
-      tooltip: "Items found by the updater."
-    },
-    {
-      value: "hold",
-      label: "Hold List",
-      tooltip: "Useful items that need sponsorship, cost screening, or access confirmation."
-    },
-    {
-      value: "all",
-      label: "All",
-      tooltip: "Clear list-category filters and show every item that matches the other filters."
-    }
-  ];
 }
 
 function chipHtml(value, type) {
@@ -196,7 +205,7 @@ function chipHtml(value, type) {
 }
 
 function toggleSetChip(button, set) {
-  const value = button.dataset.provider || button.dataset.topic;
+  const value = button.dataset.provider || button.dataset.topic || button.dataset.audience;
   if (set.has(value)) {
     set.delete(value);
     button.classList.remove("active");
@@ -207,32 +216,11 @@ function toggleSetChip(button, set) {
   render();
 }
 
-function toggleListFilter(button) {
-  const value = button.dataset.listFilter;
-  if (value === "all") {
-    state.listFilters.clear();
-  } else if (state.listFilters.has(value)) {
-    state.listFilters.delete(value);
-  } else {
-    state.listFilters.add(value);
-  }
-  syncListFilterButtons();
-  render();
-}
-
-function syncListFilterButtons() {
-  els.statusChips.querySelectorAll("[data-list-filter]").forEach((button) => {
-    const value = button.dataset.listFilter;
-    const isActive = value === "all" ? state.listFilters.size === 0 : state.listFilters.has(value);
-    button.classList.toggle("active", isActive);
-  });
-}
-
 function render() {
   if (!state.data) return;
   const items = getFilteredItems();
   els.emptyState.hidden = items.length > 0;
-  els.resultsTitle.textContent = titleForListFilters();
+  els.resultsTitle.textContent = titleForAudienceFilters();
   els.resultsCount.textContent = `${items.length} item${items.length === 1 ? "" : "s"}`;
 
   renderMetrics(items);
@@ -245,16 +233,16 @@ function getFilteredItems() {
   if (!state.data) return [];
   let items = state.data.trainings.filter(isActiveTraining);
 
-  if (state.listFilters.size) {
-    items = items.filter(matchesListFilters);
-  }
-
   if (state.providers.size) {
     items = items.filter((item) => state.providers.has(item.provider));
   }
 
   if (state.topics.size) {
     items = items.filter((item) => item.topics.some((topic) => state.topics.has(topic)));
+  }
+
+  if (state.audiences.size) {
+    items = items.filter(matchesAudienceFilters);
   }
 
   if (state.verifiedOnly) {
@@ -433,6 +421,7 @@ function renderTable(items) {
           <th>Training</th>
           <th>Provider</th>
           <th>Topics</th>
+          <th>Audience</th>
           <th>Access</th>
           <th>Registration</th>
           <th>Source</th>
@@ -445,6 +434,7 @@ function renderTable(items) {
             <td><strong>${escapeHtml(item.title)}</strong><br>${escapeHtml(item.format)}</td>
             <td>${escapeHtml(item.provider)}</td>
             <td>${escapeHtml(item.topics.join(", "))}</td>
+            <td>${escapeHtml(item.audience.join(", "))}</td>
             <td>${escapeHtml(item.access)}</td>
             <td>${item.registrationUrl ? `<a href="${escapeAttr(item.registrationUrl)}" target="_blank" rel="noopener">Register</a>` : "—"}</td>
             <td><a href="${escapeAttr(item.sourceUrl)}" target="_blank" rel="noopener">Open</a></td>
@@ -480,25 +470,16 @@ function selectedViewElement(view) {
   return els.cardsView;
 }
 
-function matchesListFilters(item) {
-  return (
-    (state.listFilters.has("recommended") && item.status === "recommended") ||
-    (state.listFilters.has("advertise") && item.priority === "advertise-now") ||
-    (state.listFilters.has("discovered") && item.status === "discovered") ||
-    (state.listFilters.has("hold") && item.status === "hold")
-  );
+function matchesAudienceFilters(item) {
+  const itemAudiences = item.audience || [];
+  return AUDIENCE_GROUPS.some((group) => {
+    return state.audiences.has(group.label) && itemAudiences.some((audience) => group.aliases.includes(audience));
+  });
 }
 
-function titleForListFilters() {
-  if (!state.listFilters.size) return "All Trainings";
-  const activeLabels = listFilterOptions()
-    .filter((option) => option.value !== "all" && state.listFilters.has(option.value))
-    .map((option) => option.label);
-  if (activeLabels.length === 1) {
-    if (activeLabels[0] === "Recommended") return "Recommended Trainings";
-    return activeLabels[0];
-  }
-  return activeLabels.join(" + ");
+function titleForAudienceFilters() {
+  if (!state.audiences.size) return "All Trainings";
+  return `${[...state.audiences].join(" + ")} Trainings`;
 }
 
 function groupByMonth(items) {
@@ -512,13 +493,14 @@ function groupByMonth(items) {
 }
 
 function downloadCsv(items) {
-  const headers = ["Date", "Title", "Provider", "Format", "Topics", "Access", "Status", "Source"];
+  const headers = ["Date", "Title", "Provider", "Format", "Topics", "Audience", "Access", "Status", "Source"];
   const rows = items.map((item) => [
     item.dateLabel,
     item.title,
     item.provider,
     item.format,
     item.topics.join("; "),
+    item.audience.join("; "),
     item.access,
     item.accessStatus,
     item.sourceUrl
