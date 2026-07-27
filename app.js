@@ -1,5 +1,12 @@
 const DATA_URL = "./data/trainings.json";
 const TODAY = new Date("2026-06-02T12:00:00-04:00");
+const URI_PROVIDER_CHIPS = [
+  "URI-ATL",
+  "URI-Academic Affairs",
+  "URI-Library",
+  "URI-ITS",
+  "URI-IACR"
+];
 
 const els = {
   search: document.querySelector("#searchInput"),
@@ -128,7 +135,11 @@ async function loadData() {
 
 function buildFilterControls() {
   const trainings = state.data.trainings;
-  const providers = unique(trainings.map((item) => item.provider)).sort();
+  const availableProviders = unique(trainings.map((item) => item.provider));
+  const providers = [
+    ...availableProviders.filter((provider) => !provider.startsWith("URI-")).sort(),
+    ...URI_PROVIDER_CHIPS
+  ];
   const topics = unique(trainings.flatMap((item) => item.topics)).sort();
 
   els.providerChips.innerHTML = providers.map((provider) => chipHtml(provider, "provider")).join("");
