@@ -134,7 +134,7 @@ async function loadData() {
 }
 
 function buildFilterControls() {
-  const trainings = state.data.trainings;
+  const trainings = state.data.trainings.filter(isActiveTraining);
   const availableProviders = unique(trainings.map((item) => item.provider));
   const providers = [
     ...availableProviders.filter((provider) => !provider.startsWith("URI-")).sort(),
@@ -242,7 +242,7 @@ function render() {
 
 function getFilteredItems() {
   if (!state.data) return [];
-  let items = [...state.data.trainings];
+  let items = state.data.trainings.filter(isActiveTraining);
 
   if (state.listFilters.size) {
     items = items.filter(matchesListFilters);
@@ -269,6 +269,10 @@ function getFilteredItems() {
   items = items.filter((item) => matchesTime(item, state.time));
 
   return sortItems(items, state.sort);
+}
+
+function isActiveTraining(item) {
+  return item.status !== "expired";
 }
 
 function searchableText(item) {
