@@ -1,6 +1,23 @@
 {
   "sources": [
     {
+      "key": "uri_atl_fall_2026",
+      "provider": "URI",
+      "label": "URI ATL Fall 2026 programming",
+      "url": "https://web.uri.edu/atl/fall-2026-atl-programming/",
+      "type": "event-page",
+      "enabled": true,
+      "discover": false,
+      "itemIdPrefix": "uri-atl-",
+      "match": [
+        "Writing",
+        "Faculty",
+        "Reflective Teaching",
+        "SoTL",
+        "IDEA"
+      ]
+    },
+    {
       "key": "uri_ncfdd",
       "provider": "NCFDD",
       "label": "URI NCFDD membership page",
