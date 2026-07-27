@@ -2,14 +2,14 @@
   "meta": {
     "title": "URI Faculty Development Training Calendar: Available PD from URI's Member Organizations",
     "subtitle": "Available professional development from URI's member organizations",
-    "lastUpdated": "2026-07-27T07:36:33.122Z",
+    "lastUpdated": "2026-07-27T12:00:00.000Z",
     "dataVersion": 1,
     "notes": [
       "The three starter DOCX files were imported locally on June 2, 2026.",
       "The internal training grid labeled DO NOT USE was used only for planning signals such as audience, timing, and topic gaps; its internal presenter and logistics details were not published.",
       "NCFDD, CIRTL, and CUR access were verified from URI or user-provided membership documentation. EAB and AAC&U access notes still need local confirmation for member-only or paid items."
     ],
-    "nextUpdateRecommended": "2026-08-03T07:36:33.122Z",
+    "nextUpdateRecommended": "2026-06-18T16:31:18.000Z",
     "sourceSnapshots": [
       {
         "key": "uri_ncfdd",
@@ -1742,6 +1742,621 @@
       "sourceUrl": "https://community.cur.org/events/calendar",
       "lastVerified": "2026-07-27",
       "detectedByUpdater": true
+    },
+    {
+      "id": "uri-atl-part-time-course-prep-consultations-fall-2026",
+      "title": "Part-time Faculty Specific Course Prep & Teaching Consultations",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-08-17",
+      "endDate": "2026-09-18",
+      "dateLabel": "Available all semester; early course-prep focus August 17-September 18, 2026",
+      "datePrecision": "exact",
+      "format": "Zoom; appointment times vary",
+      "topics": [
+        "Teaching",
+        "Mentoring",
+        "Part-time Faculty"
+      ],
+      "audience": [
+        "Part-time faculty"
+      ],
+      "access": "Open to URI employees who teach in a part-time capacity.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "Individual virtual consultations for part-time faculty who want to ask teaching questions, brainstorm an idea, or work through an assignment while preparing a course.",
+      "whyInclude": "Provides flexible, individualized teaching support throughout the semester.",
+      "registrationUrl": "https://calendar.app.google/SLYjPtEBosKoDKt1A",
+      "sourceUrl": "https://web.uri.edu/atl/part-time-faculty-course-prep-teaching-consultations/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-partnering-with-students-fall-2026",
+      "title": "Partnering with Students in Teaching and Learning",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-14",
+      "endDate": "2026-09-15",
+      "dateLabel": "September 14, 1:00-2:00 p.m., or September 15, 9:30-10:30 a.m.",
+      "datePrecision": "exact",
+      "format": "Zoom",
+      "topics": [
+        "Teaching",
+        "Student Success",
+        "Mentoring"
+      ],
+      "audience": [
+        "All instructors"
+      ],
+      "access": "Open to URI instructors.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "An introduction to practical ways instructors can partner and co-create with students to strengthen equitable outcomes, belonging, and engagement.",
+      "whyInclude": "Offers immediately usable strategies for more collaborative and inclusive teaching.",
+      "registrationUrl": "https://forms.gle/DoSntRey5KEKjkhZ6",
+      "sourceUrl": "https://web.uri.edu/atl/atls-single-session-workshops/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-part-time-faculty-meet-greet-fall-2026",
+      "title": "Part-time Faculty Meet & Greet",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-14",
+      "endDate": "2026-11-05",
+      "dateLabel": "September 14; October 6 and 21; November 5, 2026",
+      "datePrecision": "exact",
+      "format": "Zoom; session times vary",
+      "topics": [
+        "Mentoring",
+        "Faculty Well-being",
+        "Part-time Faculty"
+      ],
+      "audience": [
+        "Part-time faculty",
+        "URI employees who teach part time"
+      ],
+      "access": "Open to any URI employee who teaches in a part-time capacity.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "Informal virtual gatherings where part-time instructors can meet colleagues, discuss teaching experiences, and learn from peers.",
+      "whyInclude": "Creates a low-barrier community-building opportunity for part-time instructors.",
+      "registrationUrl": "https://forms.gle/o1QsvRbZrCyyLwRi6",
+      "sourceUrl": "https://web.uri.edu/atl/part-time-faculty-meet-greet/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-graduate-student-learning-community-fall-2026",
+      "title": "Graduate Student Learning Community",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-15",
+      "endDate": "2026-12-08",
+      "dateLabel": "September 15; October 6; November 10; December 8, 10:00-11:00 a.m.",
+      "datePrecision": "exact",
+      "format": "In person, Tyler Hall 225",
+      "topics": [
+        "Teaching",
+        "Mentoring",
+        "Graduate Education"
+      ],
+      "audience": [
+        "Graduate teaching assistants"
+      ],
+      "access": "Open to URI graduate teaching assistants; limited to 15 participants.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A four-session learning community for graduate teaching assistants to deepen inclusive and effective teaching practices through discussion, relationship-building, and implementation activities.",
+      "whyInclude": "Provides sustained teaching development and peer support for graduate instructors.",
+      "registrationUrl": "https://forms.gle/ex9f3mbn3JTYjL3i8",
+      "sourceUrl": "https://web.uri.edu/atl/graduate-ta-learning-community/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-walk-talk-fall-2026",
+      "title": "ATL Walk & Talk",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-17",
+      "endDate": "2026-12-17",
+      "dateLabel": "Thursdays, September 17-December 17, 11:00-11:45 a.m.; no meeting November 26",
+      "datePrecision": "exact",
+      "format": "In person; meet at the Quad flagpole",
+      "topics": [
+        "Teaching",
+        "Faculty Well-being",
+        "Mentoring"
+      ],
+      "audience": [
+        "All instructors"
+      ],
+      "access": "Open to URI instructors; participants may express interest or drop in.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A weekly informal walk or roll around campus for conversation with colleagues about teaching and learning topics.",
+      "whyInclude": "Combines collegial connection, teaching conversation, and a restorative break.",
+      "registrationUrl": "https://forms.gle/Bpx5RPn7UpezyjXG7",
+      "sourceUrl": "https://web.uri.edu/atl/atl-walk-talk/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-strategies-tools-graduate-tas-fall-2026",
+      "title": "Strategies & Tools for Graduate Teaching Assistants",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-17",
+      "endDate": "2026-12-03",
+      "dateLabel": "September 17; October 1, 15, and 29; November 12; December 3, 9:00-10:00 a.m.",
+      "datePrecision": "exact",
+      "format": "Hybrid, Tyler Hall 225 and Zoom",
+      "topics": [
+        "Teaching",
+        "Student Success",
+        "Graduate Education"
+      ],
+      "audience": [
+        "Graduate teaching assistants"
+      ],
+      "access": "Open to URI graduate teaching assistants; attend at least four of six workshops to earn a certificate or badge.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A six-workshop series designed to strengthen graduate teaching practice and classroom impact.",
+      "whyInclude": "Offers structured, recognized professional development for graduate instructors.",
+      "registrationUrl": "https://forms.gle/sdNz2aCVEB3mP3J17",
+      "sourceUrl": "https://web.uri.edu/atl/strategies-and-tools-for-graduate-teaching-assistants/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-unraveling-faculty-burnout-book-club-fall-2026",
+      "title": "Book Club - Unraveling Faculty Burnout",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-21",
+      "endDate": "2026-12-01",
+      "dateLabel": "September 21; October 5 and 19; November 2 and 16; December 1, 10:00-11:00 a.m.",
+      "datePrecision": "exact",
+      "format": "In person, Tyler Hall 225",
+      "topics": [
+        "Faculty Well-being",
+        "Career Transitions",
+        "Productivity"
+      ],
+      "audience": [
+        "All instructors"
+      ],
+      "access": "Open to URI instructors; books are provided.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A six-session discussion of Unraveling Faculty Burnout: Pathways to Reckoning & Renewal, focused on understanding burnout and finding pathways toward renewal.",
+      "whyInclude": "Supports sustainable faculty careers through evidence-informed reflection and peer community.",
+      "registrationUrl": "https://forms.gle/QQHh4z1GtRsy4vvg9",
+      "sourceUrl": "https://web.uri.edu/atl/book-club-unraveling-faculty-burnout/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-part-time-faculty-community-practice-fall-2026",
+      "title": "Part-time Faculty Community of Practice",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-23",
+      "endDate": "2026-12-02",
+      "dateLabel": "September 23; October 14; November 4; December 2, noon-1:00 p.m.; register by September 22",
+      "datePrecision": "exact",
+      "format": "Zoom",
+      "topics": [
+        "Teaching",
+        "Mentoring",
+        "Part-time Faculty"
+      ],
+      "audience": [
+        "Part-time faculty"
+      ],
+      "access": "Open to URI part-time faculty; registration closes September 22, 2026.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A four-session community of practice for developing relationships, exploring teaching successes and challenges, and strengthening reflective teaching practice.",
+      "whyInclude": "Provides sustained peer support tailored to part-time instructors.",
+      "registrationUrl": "https://forms.gle/ik9RF7GNDHq2SiUo7",
+      "sourceUrl": "https://web.uri.edu/atl/part-time-faculty-cop/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-intentional-rest-fall-2026",
+      "title": "Cultivating Vitality Through Intentional Rest",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-24",
+      "endDate": "2026-09-28",
+      "dateLabel": "September 24, 9:30-10:30 a.m., or September 28, 1:00-2:00 p.m.",
+      "datePrecision": "exact",
+      "format": "Zoom",
+      "topics": [
+        "Faculty Well-being",
+        "Productivity"
+      ],
+      "audience": [
+        "All instructors"
+      ],
+      "access": "Open to URI instructors.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A virtual workshop on types of rest and practical ways to incorporate restorative breaks into faculty schedules.",
+      "whyInclude": "Helps faculty build sustainable work practices and protect well-being.",
+      "registrationUrl": "https://forms.gle/ig41bgvEtwCLD4ocA",
+      "sourceUrl": "https://web.uri.edu/atl/cultivating-vitality-through-intentional-rest/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-slow-professor-book-club-fall-2026",
+      "title": "Book Club - The Slow Professor: Challenging the Culture of Speed in the Academy",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-29",
+      "endDate": "2026-12-01",
+      "dateLabel": "September 29; October 13 and 27; November 10; December 1, 11:00 a.m.-12:15 p.m.",
+      "datePrecision": "exact",
+      "format": "In person, Tyler Hall 225",
+      "topics": [
+        "Faculty Well-being",
+        "Productivity",
+        "Career Transitions"
+      ],
+      "audience": [
+        "All instructors"
+      ],
+      "access": "Open to URI instructors; books are provided.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A five-session discussion of the tenth-anniversary edition of The Slow Professor, exploring reflective, balanced, and meaningful approaches to academic work.",
+      "whyInclude": "Connects faculty well-being, collegiality, and sustainable academic practice.",
+      "registrationUrl": "https://forms.gle/j72QWPisPCSZ4vRC6",
+      "sourceUrl": "https://web.uri.edu/atl/book-club-the-slow-professor-challenging-the-culture-of-speed-in-the-academy/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-faculty-tools-support-students-fall-2026",
+      "title": "Faculty Tools to Support Students",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-29",
+      "endDate": "2026-09-30",
+      "dateLabel": "September 29, 3:30-4:30 p.m., or September 30, noon-1:00 p.m.",
+      "datePrecision": "exact",
+      "format": "Zoom",
+      "topics": [
+        "Teaching",
+        "Student Success",
+        "New Faculty"
+      ],
+      "audience": [
+        "All instructors",
+        "New faculty"
+      ],
+      "access": "Open to URI instructors.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A conversation about URI software and processes instructors can use to support student success, including Starfish, eCampus, and Report It.",
+      "whyInclude": "Helps instructors use URI systems confidently when students need support.",
+      "registrationUrl": "https://forms.gle/DoSntRey5KEKjkhZ6",
+      "sourceUrl": "https://web.uri.edu/atl/atls-single-session-workshops/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-understanding-mitigating-burnout-fall-2026",
+      "title": "Understanding and Mitigating Burnout Workshop",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-10-28",
+      "endDate": "2026-10-29",
+      "dateLabel": "October 28, 1:00-2:00 p.m., or October 29, 12:30-1:30 p.m.",
+      "datePrecision": "exact",
+      "format": "Zoom",
+      "topics": [
+        "Faculty Well-being",
+        "Productivity"
+      ],
+      "audience": [
+        "All instructors"
+      ],
+      "access": "Open to URI instructors.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A workshop on the components and causes of burnout, how to recognize it, and ways to prevent or manage it.",
+      "whyInclude": "Provides practical support for faculty well-being and sustainable work.",
+      "registrationUrl": "https://forms.gle/bPd69ftV9LhR6CfA7",
+      "sourceUrl": "https://web.uri.edu/atl/understanding-and-mitigating-burnout/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-finishing-semester-strong-fall-2026",
+      "title": "Finishing the Semester Strong",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-11-16",
+      "endDate": "2026-11-17",
+      "dateLabel": "November 16, 1:00-2:00 p.m., or November 17, 9:30-10:30 a.m.",
+      "datePrecision": "exact",
+      "format": "November 16 on Zoom; November 17 in person, Tyler Hall 225",
+      "topics": [
+        "Teaching",
+        "New Faculty",
+        "Student Success"
+      ],
+      "audience": [
+        "New faculty"
+      ],
+      "access": "Open to URI new faculty.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A New Faculty Teaching Pathway workshop on ending the semester with confidence and success.",
+      "whyInclude": "Gives new faculty timely strategies for completing their first fall semester well.",
+      "registrationUrl": "https://forms.gle/c3JJRnii5WbFmrd9A",
+      "sourceUrl": "https://web.uri.edu/atl/new-faculty-teaching-pathway/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-assessing-learning-fall-2026",
+      "title": "Assessing Learning",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-11-30",
+      "endDate": "2026-12-01",
+      "dateLabel": "November 30, 1:00-2:00 p.m., or December 1, 9:30-10:30 a.m.",
+      "datePrecision": "exact",
+      "format": "November 30 on Zoom; December 1 in person, Tyler Hall 225",
+      "topics": [
+        "Assessment",
+        "Teaching",
+        "New Faculty"
+      ],
+      "audience": [
+        "New faculty"
+      ],
+      "access": "Open to URI new faculty.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A New Faculty Teaching Pathway workshop on practical, sustainable ways to measure student learning over time.",
+      "whyInclude": "Supports stronger assessment practice and evidence of teaching effectiveness.",
+      "registrationUrl": "https://forms.gle/c3JJRnii5WbFmrd9A",
+      "sourceUrl": "https://web.uri.edu/atl/new-faculty-teaching-pathway/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-consultations-ongoing",
+      "title": "ATL Teaching and Curriculum Consultations",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-08-17",
+      "endDate": "2027-05-31",
+      "dateLabel": "Ongoing; available by appointment",
+      "datePrecision": "ongoing",
+      "format": "Individual consultation",
+      "topics": [
+        "Teaching",
+        "Curriculum",
+        "Mentoring"
+      ],
+      "audience": [
+        "All instructors"
+      ],
+      "access": "Available to URI instructors.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "Meet with an ATL team member to discuss a class, assignment, teaching question, or curriculum.",
+      "whyInclude": "Provides individualized support when a scheduled workshop does not fit the instructor's need.",
+      "sourceUrl": "https://web.uri.edu/atl/what/meet/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-brightspace-basics-ongoing",
+      "title": "Brightspace Basics",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-08-17",
+      "endDate": "2027-05-31",
+      "dateLabel": "Ongoing, self-paced",
+      "datePrecision": "ongoing",
+      "format": "Self-paced online course",
+      "topics": [
+        "Teaching",
+        "Technology",
+        "New Faculty"
+      ],
+      "audience": [
+        "All instructors"
+      ],
+      "access": "Available to URI instructors.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A self-paced course covering the Brightspace essentials instructors need to get started and manage a course.",
+      "whyInclude": "Offers anytime access to foundational learning-management-system training.",
+      "sourceUrl": "https://web.uri.edu/atl/basic-brightspace-training-course/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-academic-testing-center-ongoing",
+      "title": "Academic Testing Center",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-08-17",
+      "endDate": "2027-05-31",
+      "dateLabel": "Ongoing service and faculty resource",
+      "datePrecision": "ongoing",
+      "format": "URI testing support service",
+      "topics": [
+        "Assessment",
+        "Accessibility",
+        "Student Success"
+      ],
+      "audience": [
+        "Faculty",
+        "Academic departments"
+      ],
+      "access": "Available to URI faculty and academic departments.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "Professional proctoring and assessment support designed to promote integrity, equity, accessibility, and student learning outcomes.",
+      "whyInclude": "Connects instructors with an ongoing URI resource for accessible and inclusive assessment.",
+      "sourceUrl": "https://uri.edu/atc",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-strategies-tools-new-faculty-fall-2026",
+      "title": "Strategies & Tools for New Full-Time Faculty",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-08-17",
+      "endDate": "2026-08-19",
+      "dateLabel": "August 17-19, 2026, 10:00 a.m.-2:00 p.m. EDT daily",
+      "datePrecision": "exact",
+      "format": "Zoom and Brightspace",
+      "topics": [
+        "Teaching",
+        "New Faculty",
+        "Promotion & Tenure"
+      ],
+      "audience": [
+        "New full-time faculty"
+      ],
+      "access": "Open to URI new full-time faculty.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A three-day introduction to evidence-based teaching at URI, including inclusive learning environments, alignment of assignments with course outcomes, student academic success, and university resources for teaching excellence and professional growth.",
+      "whyInclude": "This is the first required component of URI's year-long New Faculty Teaching Pathway and helps new faculty establish a strong teaching record.",
+      "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeqVaNaJ1kQbvGybo__Dir7w-ncvdt9ICZyvyiqwlx1LUG3Vw/viewform",
+      "sourceUrl": "https://web.uri.edu/atl/2026-strategies-and-tools-for-teaching-at-uri/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-reflective-teaching-practice-fall-2026",
+      "title": "Reflective Teaching Practice",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-15",
+      "endDate": "2026-09-16",
+      "dateLabel": "September 15, 1:00-2:00 p.m., or September 16, 11:00 a.m.-noon",
+      "datePrecision": "exact",
+      "format": "Zoom",
+      "topics": [
+        "Teaching",
+        "Promotion & Tenure"
+      ],
+      "audience": [
+        "All instructors"
+      ],
+      "access": "Open to URI instructors.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A workshop on using current and past classroom experiences to guide instructor development and build sustainable, iterative reflective teaching practices.",
+      "whyInclude": "Reflective teaching can help faculty articulate growth, choices, and evidence of effectiveness in annual review and promotion materials.",
+      "registrationUrl": "https://forms.gle/DoSntRey5KEKjkhZ6",
+      "sourceUrl": "https://web.uri.edu/atl/atls-single-session-workshops/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-sotl-guide-book-club-fall-2026",
+      "title": "The SoTL Guide Book Club",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-09-17",
+      "endDate": "2026-12-17",
+      "dateLabel": "September 17; October 1 and 15; November 5; December 3 and 17, 9:30-10:45 a.m.",
+      "datePrecision": "exact",
+      "format": "In person, Multicultural Student Services Center, Room 203",
+      "topics": [
+        "Writing",
+        "Research",
+        "Promotion & Tenure",
+        "Teaching"
+      ],
+      "audience": [
+        "All instructors"
+      ],
+      "access": "Open to URI instructors.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A six-session book club using The SoTL Guide to help instructors turn a teaching question into a scholarship of teaching and learning research project.",
+      "whyInclude": "The series connects reflective teaching, project design, scholarly writing, and a potential contribution to a faculty member's promotion record.",
+      "registrationUrl": "https://forms.gle/h2j2vcCVPCmEk1dp6",
+      "sourceUrl": "https://web.uri.edu/atl/the-sotl-guide-book-club/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-fall-writing-retreats-2026",
+      "title": "Fall Writing Retreats",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "advertise-now",
+      "startDate": "2026-09-25",
+      "endDate": "2026-10-23",
+      "dateLabel": "September 25 and October 23, 2026, 9:00 a.m.-3:00 p.m.",
+      "datePrecision": "exact",
+      "format": "In person, Coastal Institute Large Conference Room, Bay Campus",
+      "topics": [
+        "Writing",
+        "Research",
+        "Promotion & Tenure"
+      ],
+      "audience": [
+        "All writers",
+        "Faculty"
+      ],
+      "access": "Free and open to URI writers.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "Writing Across URI hosts two day-long retreats for focused work on academic articles, grant proposals, creative projects, or other writing. Participants may attend for an hour or stay all day.",
+      "whyInclude": "These local retreats provide protected writing time at two useful points in the fall semester.",
+      "registrationUrl": "https://forms.gle/ZxTfR2SgYXyFw7VH6",
+      "sourceUrl": "https://web.uri.edu/atl/fall-writing-retreats/",
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "uri-atl-idea-more-than-a-number-fall-2026",
+      "title": "IDEA: More than a Number",
+      "provider": "URI",
+      "status": "recommended",
+      "priority": "local",
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-08",
+      "dateLabel": "October 5, 1:00-2:00 p.m., or October 8, 9:30-10:30 a.m.",
+      "datePrecision": "exact",
+      "format": "October 5 on Zoom; October 8 in person, Tyler Hall 225",
+      "topics": [
+        "Teaching",
+        "Promotion & Tenure",
+        "New Faculty"
+      ],
+      "audience": [
+        "New faculty"
+      ],
+      "access": "Open to URI new faculty.",
+      "accessStatus": "verified",
+      "costStatus": "free",
+      "description": "A New Faculty Teaching Pathway workshop on using IDEA results and mid-semester feedback as meaningful tools for learning and professional growth.",
+      "whyInclude": "The workshop helps faculty interpret teaching feedback and connect it to reflective improvement and evidence of teaching effectiveness.",
+      "registrationUrl": "https://forms.gle/c3JJRnii5WbFmrd9A",
+      "sourceUrl": "https://web.uri.edu/atl/new-faculty-teaching-pathway/",
+      "lastVerified": "2026-07-27"
     }
   ]
 }
