@@ -40,6 +40,14 @@ const AUDIENCE_GROUPS = [
   {
     label: "Tenure-Track Faculty",
     aliases: ["Tenure-track faculty"]
+  },
+  {
+    label: "Associate Deans",
+    aliases: ["Associate deans"]
+  },
+  {
+    label: "Department Chairs",
+    aliases: ["Department chairs", "Chairs"]
   }
 ];
 const AUDIENCE_TOPIC_LABELS = new Set(["New Faculty", "Part-time Faculty"]);
@@ -172,9 +180,16 @@ async function loadData() {
 function buildFilterControls() {
   const trainings = state.data.trainings.filter(isActiveTraining);
   const availableProviders = unique(trainings.map((item) => item.provider));
+  const availableUriProviders = availableProviders
+    .filter((provider) => provider.startsWith("URI-") && !URI_PROVIDER_CHIPS.includes(provider))
+    .sort();
   const providers = [
-    ...availableProviders.filter((provider) => !provider.startsWith("URI-")).sort(),
-    ...URI_PROVIDER_CHIPS
+    ...availableProviders
+      .filter((provider) => provider !== "Other" && !provider.startsWith("URI-"))
+      .sort(),
+    ...URI_PROVIDER_CHIPS,
+    ...availableUriProviders,
+    ...(availableProviders.includes("Other") ? ["Other"] : [])
   ];
   const topics = unique(trainings.flatMap((item) => item.topics))
     .filter((topic) => !AUDIENCE_TOPIC_LABELS.has(topic))
