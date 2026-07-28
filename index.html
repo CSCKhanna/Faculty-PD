@@ -70,10 +70,6 @@
             <option value="spring">Spring 2027</option>
           </select>
         </label>
-        <label class="toggle-control has-tooltip" data-tooltip="Show only items that are free, member-enabled, or otherwise verified for URI use.">
-          <input id="verifiedOnly" type="checkbox">
-          <span>Verified/free only</span>
-        </label>
       </section>
 
       <section class="quick-actions" aria-label="Page actions">
@@ -113,7 +109,6 @@
             <p><strong>Search</strong> narrows by title, provider, topic, audience, description, access note, or source.</p>
             <p><strong>Sort</strong> orders by date, provider, or priority.</p>
             <p><strong>Timing</strong> limits the list to all year, upcoming, summer, fall, or spring.</p>
-            <p><strong>Verified/free only</strong> hides items that need local access or cost confirmation.</p>
           </article>
           <article>
             <h3>Views and Exports</h3>
@@ -158,14 +153,6 @@
           <strong id="metricShowing">0</strong>
         </article>
         <article class="metric-tile">
-          <span class="metric-label">Verified Access</span>
-          <strong id="metricVerified">0</strong>
-        </article>
-        <article class="metric-tile">
-          <span class="metric-label">Advertise First</span>
-          <strong id="metricPriority">0</strong>
-        </article>
-        <article class="metric-tile">
           <span class="metric-label">Needs Confirmation</span>
           <strong id="metricConfirm">0</strong>
         </article>
@@ -193,6 +180,6 @@
       <span id="serverStatus">Updates run automatically daily at 11:59 p.m. Eastern.</span>
     </footer>
 
-    <script src="./app.js?v=20260728-simplified-status-display" type="module"></script>
+    <script src="./app.js?v=20260728-simplified-summary" type="module"></script>
   </body>
 </html>
