@@ -353,7 +353,7 @@ function renderCards(items) {
       <div class="training-top provider-${providerClassName(item.provider)}"></div>
       <div class="training-body">
         <div class="card-meta">
-          ${cardBadges(item)}
+          <span class="badge provider-${providerClassName(item.provider)}">${escapeHtml(item.provider)}</span>
         </div>
         <h3>${escapeHtml(item.title)}</h3>
         <p class="date-line">${escapeHtml(item.dateLabel)}</p>
@@ -373,31 +373,6 @@ function renderCards(items) {
   `).join("");
 }
 
-function cardBadges(item) {
-  return [
-    `<span class="badge provider-${providerClassName(item.provider)}">${escapeHtml(item.provider)}</span>`,
-    tooltipBadge(accessLabel(item), item.accessStatus, badgeTooltipForAccess(item)),
-    item.priority === "advertise-now" ? tooltipBadge("Advertise first", "free", "Highest-confidence item to promote soon.") : "",
-    item.status === "discovered" ? tooltipBadge("Review", "confirm", "Items found by the updater.") : "",
-    item.status === "hold" ? tooltipBadge("Hold", "hold", "Useful item that needs sponsorship, cost screening, or access confirmation.") : ""
-  ].filter(Boolean).join("");
-}
-
-function tooltipBadge(label, className, tooltip) {
-  return `<span class="badge ${escapeAttr(className)} has-tooltip badge-tooltip" tabindex="0" role="note" data-tooltip="${escapeAttr(tooltip)}" aria-label="${escapeAttr(`${label}: ${tooltip}`)}">${escapeHtml(label)}</span>`;
-}
-
-function badgeTooltipForAccess(item) {
-  const tooltips = {
-    verified: "Access is verified for URI or publicly available as listed.",
-    confirm: "Access or cost needs local confirmation.",
-    partial: "Some access evidence is available; screen cost or membership details.",
-    paid: "Paid or sponsor-needed item.",
-    local: "Local URI-created session or resource."
-  };
-  return tooltips[item.accessStatus] || "Access status for this item.";
-}
-
 function renderTimeline(items) {
   const grouped = groupByMonth(items);
   els.timelineView.innerHTML = Object.entries(grouped).map(([month, monthItems]) => `
@@ -408,7 +383,6 @@ function renderTimeline(items) {
           <article class="timeline-item">
             <div class="card-meta">
               <span class="badge">${escapeHtml(item.provider)}</span>
-              ${tooltipBadge(accessLabel(item), item.accessStatus, badgeTooltipForAccess(item))}
             </div>
             <h3>${escapeHtml(item.title)}</h3>
             <p class="date-line">${escapeHtml(item.dateLabel)}</p>
@@ -437,7 +411,6 @@ function renderTable(items) {
           <th>Provider</th>
           <th>Topics</th>
           <th>Audience</th>
-          <th>Access</th>
           <th>Registration</th>
           <th>Source</th>
         </tr>
@@ -450,7 +423,6 @@ function renderTable(items) {
             <td>${escapeHtml(item.provider)}</td>
             <td>${escapeHtml(item.topics.join(", "))}</td>
             <td>${escapeHtml(item.audience.join(", "))}</td>
-            <td>${escapeHtml(item.access)}</td>
             <td>${item.registrationUrl ? `<a href="${escapeAttr(item.registrationUrl)}" target="_blank" rel="noopener">Register</a>` : "—"}</td>
             <td><a href="${escapeAttr(item.sourceUrl)}" target="_blank" rel="noopener">Open</a></td>
           </tr>
@@ -508,7 +480,7 @@ function groupByMonth(items) {
 }
 
 function downloadCsv(items) {
-  const headers = ["Date", "Title", "Provider", "Format", "Topics", "Audience", "Access", "Status", "Source"];
+  const headers = ["Date", "Title", "Provider", "Format", "Topics", "Audience", "Status", "Source"];
   const rows = items.map((item) => [
     item.dateLabel,
     item.title,
@@ -516,7 +488,6 @@ function downloadCsv(items) {
     item.format,
     item.topics.join("; "),
     item.audience.join("; "),
-    item.access,
     item.accessStatus,
     item.sourceUrl
   ]);
@@ -637,15 +608,6 @@ function statusLabel(status) {
     local: "Local item"
   };
   return labels[status] || status;
-}
-
-function accessLabel(item) {
-  if (item.accessStatus === "verified") return "Verified";
-  if (item.accessStatus === "partial") return "Free/open";
-  if (item.accessStatus === "confirm") return "Confirm";
-  if (item.accessStatus === "paid") return "Paid";
-  if (item.accessStatus === "local") return "Local";
-  return item.accessStatus;
 }
 
 function formatDateTime(value) {
