@@ -56,13 +56,10 @@ const els = {
   search: document.querySelector("#searchInput"),
   sort: document.querySelector("#sortSelect"),
   time: document.querySelector("#timeSelect"),
-  verifiedOnly: document.querySelector("#verifiedOnly"),
   providerChips: document.querySelector("#providerChips"),
   topicChips: document.querySelector("#topicChips"),
   audienceChips: document.querySelector("#audienceChips"),
   metricShowing: document.querySelector("#metricShowing"),
-  metricVerified: document.querySelector("#metricVerified"),
-  metricPriority: document.querySelector("#metricPriority"),
   metricConfirm: document.querySelector("#metricConfirm"),
   accessNotes: document.querySelector("#accessNotes"),
   accessToggle: document.querySelector("#accessToggle"),
@@ -96,8 +93,7 @@ const state = {
   topics: new Set(),
   audiences: new Set(),
   sort: "date",
-  time: "all",
-  verifiedOnly: false
+  time: "all"
 };
 
 init();
@@ -120,11 +116,6 @@ function bindEvents() {
 
   els.time.addEventListener("change", () => {
     state.time = els.time.value;
-    render();
-  });
-
-  els.verifiedOnly.addEventListener("change", () => {
-    state.verifiedOnly = els.verifiedOnly.checked;
     render();
   });
 
@@ -260,12 +251,6 @@ function getFilteredItems() {
     items = items.filter(matchesAudienceFilters);
   }
 
-  if (state.verifiedOnly) {
-    items = items.filter((item) => {
-      return item.costStatus === "free-or-member" && !["confirm", "paid"].includes(item.accessStatus);
-    });
-  }
-
   if (state.query) {
     items = items.filter((item) => searchableText(item).includes(state.query));
   }
@@ -324,8 +309,6 @@ function priorityRank(item) {
 
 function renderMetrics(items) {
   els.metricShowing.textContent = items.length;
-  els.metricVerified.textContent = items.filter((item) => item.accessStatus === "verified").length;
-  els.metricPriority.textContent = items.filter((item) => item.priority === "advertise-now").length;
   els.metricConfirm.textContent = items.filter((item) => item.accessStatus === "confirm").length;
 }
 
