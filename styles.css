@@ -900,6 +900,7 @@ html {
 
 body {
   background: var(--paper);
+  overflow-x: hidden;
 }
 
 a {
