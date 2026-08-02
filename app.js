@@ -1,3 +1,5 @@
+import { AUDIENCE_GROUPS, resolveAudienceGroups } from "./audience-rules.mjs";
+
 const DATA_URL = "./data/trainings.json";
 const TODAY = new Date("2026-06-02T12:00:00-04:00");
 const URI_PROVIDER_CHIPS = [
@@ -7,48 +9,6 @@ const URI_PROVIDER_CHIPS = [
   "URI-ITS",
   "URI-IACR",
   "URI-Provost's Office"
-];
-const AUDIENCE_GROUPS = [
-  {
-    label: "Graduate Students & Postdocs",
-    aliases: ["Future faculty", "Graduate students", "Graduate teaching assistants", "Postdocs"]
-  },
-  {
-    label: "New Faculty",
-    aliases: ["New faculty", "New full-time faculty"]
-  },
-  {
-    label: "Early-Career Faculty",
-    aliases: ["Early-career faculty", "Pre-tenure faculty"]
-  },
-  {
-    label: "Mid-Career Faculty",
-    aliases: ["Mid-career faculty", "Associate professors"]
-  },
-  {
-    label: "Senior Faculty",
-    aliases: ["Senior faculty", "Full professors"]
-  },
-  {
-    label: "Part-Time Faculty",
-    aliases: ["Part-time faculty", "URI employees who teach part time"]
-  },
-  {
-    label: "Teaching-Track Faculty",
-    aliases: ["Teaching-track faculty"]
-  },
-  {
-    label: "Tenure-Track Faculty",
-    aliases: ["Tenure-track faculty"]
-  },
-  {
-    label: "Associate Deans",
-    aliases: ["Associate deans"]
-  },
-  {
-    label: "Department Chairs",
-    aliases: ["Department chairs", "Chairs"]
-  }
 ];
 const AUDIENCE_TOPIC_LABELS = new Set(["New Faculty", "Part-time Faculty"]);
 
@@ -185,9 +145,9 @@ function buildFilterControls() {
   const topics = unique(trainings.flatMap((item) => item.topics))
     .filter((topic) => !AUDIENCE_TOPIC_LABELS.has(topic))
     .sort();
-  const audienceGroups = AUDIENCE_GROUPS.filter((group) => trainings.some((item) => {
-    return item.audience?.some((audience) => group.aliases.includes(audience));
-  }));
+  const audienceGroups = AUDIENCE_GROUPS.filter((group) => {
+    return trainings.some((item) => resolveAudienceGroups(item).has(group.label));
+  });
 
   els.providerChips.innerHTML = providers.map((provider) => chipHtml(provider, "provider")).join("");
   els.topicChips.innerHTML = topics.map((topic) => chipHtml(topic, "topic")).join("");
@@ -261,7 +221,7 @@ function getFilteredItems() {
 }
 
 function isActiveTraining(item) {
-  return item.status !== "expired";
+  return !["expired", "source-removed"].includes(item.status);
 }
 
 function searchableText(item) {
@@ -441,10 +401,8 @@ function selectedViewElement(view) {
 }
 
 function matchesAudienceFilters(item) {
-  const itemAudiences = item.audience || [];
-  return AUDIENCE_GROUPS.some((group) => {
-    return state.audiences.has(group.label) && itemAudiences.some((audience) => group.aliases.includes(audience));
-  });
+  const itemAudienceGroups = resolveAudienceGroups(item);
+  return [...state.audiences].some((audience) => itemAudienceGroups.has(audience));
 }
 
 function titleForAudienceFilters() {
