@@ -152,7 +152,7 @@ function buildFilterControls() {
   els.providerChips.innerHTML = providers.map((provider) => chipHtml(provider, "provider")).join("");
   els.topicChips.innerHTML = topics.map((topic) => chipHtml(topic, "topic")).join("");
   els.audienceChips.innerHTML = audienceGroups.map((group) => {
-    return `<button class="chip has-tooltip" type="button" data-audience="${escapeAttr(group.label)}" data-tooltip="Show trainings intended for ${escapeAttr(group.label.toLowerCase())}.">${escapeHtml(group.label)}</button>`;
+    return `<button class="chip has-tooltip" type="button" data-audience="${escapeAttr(group.label)}" data-tooltip="Show opportunities intended for ${escapeAttr(group.label.toLowerCase())}.">${escapeHtml(group.label)}</button>`;
   }).join("");
 
   els.providerChips.querySelectorAll("button").forEach((button) => {
@@ -350,7 +350,7 @@ function renderTable(items) {
       <thead>
         <tr>
           <th>Date</th>
-          <th>Training</th>
+          <th>Opportunity</th>
           <th>Provider</th>
           <th>Topics</th>
           <th>Audience</th>
@@ -406,8 +406,8 @@ function matchesAudienceFilters(item) {
 }
 
 function titleForAudienceFilters() {
-  if (!state.audiences.size) return "All Trainings";
-  return `${[...state.audiences].join(" + ")} Trainings`;
+  if (!state.audiences.size) return "All Opportunities";
+  return `${[...state.audiences].join(" + ")} Opportunities`;
 }
 
 function groupByMonth(items) {
@@ -466,7 +466,7 @@ async function copyAnnouncement() {
     .slice(0, 6)
     .map((item) => `- ${item.title} (${item.provider}): ${item.dateLabel}`)
     .join("\n");
-  const text = `URI faculty can explore a curated yearlong pathway of AI, writing, and promotion/tenure trainings. Recommended starting points:\n${featured}`;
+  const text = `URI faculty can explore a curated yearlong pathway of AI, writing, and promotion/tenure opportunities. Recommended starting points:\n${featured}`;
   await navigator.clipboard.writeText(text);
   els.serverStatus.textContent = "Announcement copy placed on clipboard.";
 }
