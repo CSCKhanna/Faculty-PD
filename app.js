@@ -309,7 +309,7 @@ function renderCards(items) {
             <svg class="button-icon" aria-hidden="true"><use href="#icon-link"></use></svg>
             Source
           </a>
-          ${calendarUrl(item) ? `<a class="text-link" href="${calendarUrl(item)}" target="_blank" rel="noopener">Calendar</a>` : ""}
+          ${calendarLink(item)}
         </div>
       </div>
     </article>
@@ -336,6 +336,7 @@ function renderTimeline(items) {
                 <svg class="button-icon" aria-hidden="true"><use href="#icon-link"></use></svg>
                 Source
               </a>
+              ${calendarLink(item)}
             </div>
           </article>
         `).join("")}
@@ -355,6 +356,7 @@ function renderTable(items) {
           <th>Topics</th>
           <th>Audience</th>
           <th>Registration</th>
+          <th>Calendar</th>
           <th>Source</th>
         </tr>
       </thead>
@@ -367,6 +369,7 @@ function renderTable(items) {
             <td>${escapeHtml(item.topics.join(", "))}</td>
             <td>${escapeHtml(item.audience.join(", "))}</td>
             <td>${item.registrationUrl ? `<a href="${escapeAttr(item.registrationUrl)}" target="_blank" rel="noopener">Register</a>` : "—"}</td>
+            <td>${calendarLink(item, "—")}</td>
             <td><a href="${escapeAttr(item.sourceUrl)}" target="_blank" rel="noopener">Open</a></td>
           </tr>
         `).join("")}
@@ -482,6 +485,11 @@ function calendarUrl(item) {
     details: `${item.description}\n\nAccess: ${item.access}\n\nSource: ${item.sourceUrl}`
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+function calendarLink(item, fallback = "") {
+  const url = calendarUrl(item);
+  return url ? `<a class="text-link" href="${escapeAttr(url)}" target="_blank" rel="noopener">Calendar</a>` : fallback;
 }
 
 function unique(values) {
